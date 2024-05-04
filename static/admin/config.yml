@@ -1,0 +1,96 @@
+backend:
+  name: test-repo
+  branch: master
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: "products"
+    label: "ДІЯТИ БЕЗ СПРОТИВУ"
+    folder: "content/products"
+    create: true
+    slug: "{{label}}-{{month}}-{{year}}-{{minute}}"
+    media_folder: ""
+    public_folder: ""
+    path: "{{label}}-{{month}}-{{year}}-{{minute}}/index"
+    editor:
+      preview: false
+    fields:
+      - { label: "Up title", name: "upTitle", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sub title", name: "subTitle", widget: "string" }
+      - { label: "Action btn", name: "actionBtn", widget: "string" }
+      - label: "Список Тарифів"
+        name: "tariffs"
+        widget: "list"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+              default: "Коучинговий урок",
+            }
+          - label: "Submit Button"
+            name: "button"
+            widget: "object"
+            fields:
+              - {
+                  name: "text",
+                  label: "Text",
+                  widget: "string",
+                  default: "Купити",
+                }
+              - {
+                  name: "link",
+                  label: "Link on pay",
+                  widget: "string",
+                  default: "https://secure.wayforpay.com/button/bbc630ca1b402",
+                }
+              - { name: "price", label: "Price", widget: "number", default: 50 }
+              - {
+                  name: "discountPrice",
+                  label: "discount price",
+                  widget: "number",
+                  default: 30,
+                }
+              - {
+                  name: "isEnabledBtn",
+                  label: "Show submit button",
+                  widget: "boolean",
+                  default: true,
+                }
+          - label: "Пункти опису"
+            name: "textList"
+            widget: "list"
+            fields:
+              - label: "List"
+                name: "listAndSubList"
+                widget: "object"
+                fields:
+                  - label: "listItem"
+                    name: "listItem"
+                    widget: "object"
+                    fields:
+                      - {
+                          name: "text",
+                          label: "Text",
+                          widget: "string",
+                          default: "Урок який складається з 3 частин:",
+                        }
+                      - {
+                          name: "isLineThrough",
+                          label: "Is Line Through",
+                          widget: "boolean",
+                          default: false,
+                        }
+                  - label: "Під пункти"
+                    name: "listOfSubItems"
+                    widget: "list"
+                    fields:
+                      - {
+                          label: "Sub Item",
+                          name: "subItem",
+                          widget: "string",
+                          default: "Ясність, що саме Вам заважає",
+                        }
