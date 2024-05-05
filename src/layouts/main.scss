@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 @font-face {
   font-family: sf-medium;
   src: url(../../fonts/sf-compact-display-medium-5864711817c30.woff);
@@ -7,6 +7,7 @@
   font-family: sf-thin;
   src: url(../../fonts/sf-compact-display-thin-58646eb43a785.woff);
 }
+
 :root {
   --font-Sacramento: "Sacramento", sans-serif;
   --font-SfMedium: "sf-medium", sans-serif;

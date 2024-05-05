@@ -6,11 +6,16 @@ import { Link } from "gatsby";
 
 export const Header = () => {
   const [appearHeader, setAppearHeader] = useState(true);
-
+  const [headerOnTop, setHeaderOnTop] = useState(true);
   useEffect(() => {
     let prevScroll = window.scrollY;
     const appearHeader = () => {
       const currScroll = window.scrollY;
+      if (currScroll === 0) {
+        setHeaderOnTop(true);
+      } else {
+        setHeaderOnTop(false);
+      }
       if (prevScroll < currScroll) {
         setAppearHeader(false);
       }
@@ -26,7 +31,12 @@ export const Header = () => {
   }, []);
   return (
     <div
-      style={appearHeader ? { top: "0px" } : { top: "-100px" }}
+      style={{
+        top: headerOnTop ? "0px" : appearHeader ? "10px" : "-100px",
+        borderRadius: !headerOnTop ? "8px" : "0px",
+        maxWidth: headerOnTop ? "" : "600px",
+        margin: "auto",
+      }}
       className={style.header_wrap}
     >
       <div className={style.logo}>nl</div>
