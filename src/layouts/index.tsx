@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
 import { PageProps } from "gatsby";
+import "./main.scss";
+import { Header } from "../components/header";
 const Layout: React.FC<PageProps> = ({ children }) => {
   return (
     <Fragment>
-      <header>hello</header>
+      <Header />
       {children}
       <footer>bye</footer>
     </Fragment>

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@font-face {
+  font-family: sf-medium;
+  src: url(../../fonts/sf-compact-display-medium-5864711817c30.woff);
+}
+@font-face {
+  font-family: sf-thin;
+  src: url(../../fonts/sf-compact-display-thin-58646eb43a785.woff);
+}
+:root {
+  --font-Sacramento: "Sacramento", sans-serif;
+  --font-SfMedium: "sf-medium", sans-serif;
+  --font-SfThin: "sf-thin", sans-serif;
+  --color-gray: #828282;
+  --color-bg: #050505;
+  --color-white: #ffffff;
+}
+body {
+  background-color: var(--color-bg);
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray) !important;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--color-bg) !important; /* Color of the scrollbar track */
+  }
+  &::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: var(--color-gray);
+    border-radius: 2px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+button,
+svg,
+li {
+  cursor: pointer;
+}

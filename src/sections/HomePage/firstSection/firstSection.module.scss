@@ -1,0 +1,18 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 100px;
+}
+.hello {
+  font-size: 36px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  &:nth-child(1) {
+    font-family: var(--font-SfMedium);
+  }
+  &:nth-child(2) {
+    font-family: var(--font-SfThin);
+  }
+}
