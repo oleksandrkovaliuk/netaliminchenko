@@ -1,0 +1,116 @@
+.footer_wrap {
+  padding: 100px 150px 20px;
+}
+.logo_n_businessArea {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-gray);
+  margin-bottom: 30px;
+  .logo {
+    span {
+      font-size: 35px;
+      font-family: var(--font-Sacramento);
+      color: var(--color-white);
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 17px;
+      font-family: var(--font-SfThin);
+      color: var(--color-white);
+    }
+  }
+  .business_area {
+    list-style: none;
+    padding-bottom: 20px;
+    text-align: right;
+    li {
+      font-family: var(--font-SfThin);
+      color: var(--color-white);
+      &:first-child {
+        font-family: var(--font-SfMedium);
+        font-size: 19px;
+        color: var(--color-gray);
+      }
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.policynsocialmedia {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  a {
+    text-decoration: unset;
+  }
+  span,
+  a {
+    color: var(--color-gray);
+    font-size: 15px;
+    font-family: var(--font-SfThin);
+    transition: all 0.3s ease-in-out;
+    a {
+      position: relative;
+      &:hover {
+        &::before {
+          background-color: var(--color-white);
+        }
+      }
+      &::before {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-gray);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .socialmedia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin-bottom: 10px;
+    li {
+      position: relative;
+      &:not(:last-child) {
+        &::before {
+          content: " ";
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+          right: -15px;
+          background-color: var(--color-gray);
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            fill: var(--color-white);
+          }
+        }
+      }
+      svg {
+        width: 17px;
+        height: 17px;
+        flex-shrink: 0;
+        path {
+          fill: var(--color-gray);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+}

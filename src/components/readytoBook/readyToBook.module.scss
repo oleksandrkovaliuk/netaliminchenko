@@ -1,0 +1,135 @@
+.ready_to_book {
+  //   background-color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  a {
+    text-decoration: unset;
+  }
+  .title {
+    font-size: 36px;
+    color: var(--color-white);
+    font-family: var(--font-SfMedium);
+    font-weight: unset;
+  }
+  span {
+    font-family: var(--font-SfThin);
+    display: inline-block;
+    font-size: 30px;
+    color: var(--color-white);
+    margin-bottom: 10px;
+  }
+  .way_to_contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    .contant_form {
+      padding: 10px 20px;
+      border: unset;
+      border-radius: 7px;
+      background-color: rgba(255, 255, 255, 1);
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      color: var(--color-bg);
+      max-width: 200px;
+      width: 100%;
+      font-size: 15px;
+      font-family: var(--font-SfMedium);
+      &:hover {
+        background-color: transparent;
+        color: var(--color-white);
+        &::before {
+          height: 200%;
+          width: 120%;
+          left: -10%;
+        }
+      }
+      &::before {
+        content: " ";
+        position: absolute;
+        top: unset;
+        left: 40%;
+        right: 0;
+        bottom: -25px;
+        background: linear-gradient(
+          50deg,
+          rgba(5, 5, 5, 0.7),
+          rgba(5, 5, 5, 0.7)
+        );
+        backdrop-filter: blur(5px);
+        border-radius: 50%;
+        z-index: -1;
+        height: 1px;
+        width: 20%;
+
+        transition: all 0.4s ease-in-out;
+      }
+    }
+
+    .social_media {
+      a {
+        font-size: 17px;
+        color: var(--color-white);
+        font-family: var(--font-SfMedium);
+      }
+      .telegram {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        .img_link {
+          position: relative;
+          &:hover {
+            svg {
+              &:nth-child(2) {
+                animation: flewAnimation 0.7s forwards;
+                opacity: 0;
+                pointer-events: none;
+              }
+              &:nth-child(3) {
+                opacity: 1;
+                pointer-events: unset;
+                path {
+                  fill: var(--color-white);
+                }
+              }
+            }
+          }
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+          svg {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: -3px;
+            right: -3px;
+            transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            &:nth-child(3) {
+              opacity: 0;
+              pointer-events: unset;
+            }
+            path {
+              fill: var(--color-gray);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes flewAnimation {
+  0% {
+    rotate: 0;
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -15px);
+    rotate: 20deg;
+  }
+}

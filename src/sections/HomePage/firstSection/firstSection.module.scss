@@ -19,11 +19,38 @@
         color: var(--color-white);
         font-family: var(--font-SfThin);
       }
-      h1 {
-        font-size: 46px;
-        color: var(--color-white);
-        font-family: var(--font-SfMedium);
+      .redirect_to_blog {
+        text-decoration: unset;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
         margin-bottom: 5px;
+
+        &:hover {
+          h1 {
+            color: var(--color-gray);
+          }
+          svg {
+            opacity: 1;
+          }
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+          path {
+            fill: var(--color-gray);
+          }
+        }
+        h1 {
+          font-size: 46px;
+          color: var(--color-white);
+          font-family: var(--font-SfMedium);
+
+          transition: all 0.3s ease-in-out;
+        }
       }
       p {
         font-size: 18px;

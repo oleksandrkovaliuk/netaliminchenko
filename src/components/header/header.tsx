@@ -3,7 +3,6 @@ import * as style from "./header.module.scss";
 import { Telegram } from "../../icons/telegram";
 import { Instagram } from "../../icons/instagram";
 import { Link } from "gatsby";
-
 export const Header = () => {
   const [appearHeader, setAppearHeader] = useState(true);
   const [headerOnTop, setHeaderOnTop] = useState(true);
@@ -39,7 +38,10 @@ export const Header = () => {
       }}
       className={style.header_wrap}
     >
-      <div className={style.logo}>nl</div>
+      <Link className={style.logo} to="/">
+        nl
+      </Link>
+
       <ul className={style.nav}>
         <li>
           <Link to="/about">About Me</Link>
@@ -51,14 +53,14 @@ export const Header = () => {
           <Link to="/contact">Contant me</Link>
         </li>
         <li>
-          <Link to="https://t.me/mylife_ph">
+          <a href="https://t.me/mylife_ph">
             <Telegram />
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to="https://www.instagram.com/netaliminchenko/">
+          <a href="https://www.instagram.com/netaliphotographer/">
             <Instagram />
-          </Link>
+          </a>
         </li>
       </ul>
     </div>

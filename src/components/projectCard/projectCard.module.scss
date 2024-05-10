@@ -1,0 +1,115 @@
+.project_card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    .img_block {
+      img {
+        margin-left: auto;
+      }
+      .explore_btn {
+        left: unset;
+        right: 10px;
+      }
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  .img_block {
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    img {
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    a {
+      text-decoration: unset;
+    }
+    .explore_btn {
+      padding: 10px 20px;
+      border: unset;
+      border-radius: 7px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      color: var(--color-bg);
+      font-size: 15px;
+      font-family: var(--font-SfMedium);
+      text-decoration: unset;
+      &:hover {
+        background-color: transparent;
+        color: var(--color-white);
+        &::before {
+          height: 200%;
+          width: 120%;
+          left: -10%;
+        }
+      }
+      &::before {
+        content: " ";
+        position: absolute;
+        top: unset;
+        left: 40%;
+        right: 0;
+        bottom: -20px;
+        background: linear-gradient(
+          50deg,
+          rgba(5, 5, 5, 0.7),
+          rgba(5, 5, 5, 0.7)
+        );
+        backdrop-filter: blur(5px);
+        border-radius: 50%;
+        z-index: -1;
+        height: 1px;
+        width: 20%;
+
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+
+  .right_disc {
+    position: absolute;
+    max-width: 400px;
+    z-index: -1;
+    h1,
+    p {
+      color: var(--color-white);
+    }
+    h1 {
+      font-family: var(--font-SfMedium);
+    }
+    p {
+      font-family: var(--font-SfThin);
+      margin-bottom: 5px;
+    }
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      font-size: 13px;
+      font-family: var(--font-SfMedium);
+      color: var(--color-white);
+      svg {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        path {
+          fill: var(--color-white);
+        }
+      }
+    }
+  }
+}

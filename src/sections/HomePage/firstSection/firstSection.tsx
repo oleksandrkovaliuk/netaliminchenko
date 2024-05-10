@@ -1,19 +1,26 @@
-import React, { Fragment } from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
 import * as styles from "./firstSection.module.scss";
+import { Link } from "gatsby";
+import { Share } from "../../../icons/share";
 export const FirstSection = () => {
   return (
     <div className={styles.first_wrap}>
       <div className={styles.about}>
         <img
-          src={
-            "https://cdn4.cdn-telegram.org/file/GIVpyB9qfM2ykuH29PGl506KlP_uwQAFVqngmCTu1rdQcQNVZOZxSe-nuWFti3DvHJ4T6n2_1YtoXvWc5M_5zAjNKL1xY_zAq64OHTuCE-VH3y3a4UFuV5Be6D8Km_Q_pxeZsfrSjj5b5ul0brOujVKexxhv0obg9-2DAMMQW8212NRhNNjuq-_g2CT5MH3WtXne9sfhha6eHoPkO5BehOteQmWmE0nZEm3EBMqFelHwWsuvMw-GJNO6RUCKzFm4cMLYjQBtoqgHKpSsLDOiMkvVdzfAHyGUwbu3RmX2sbKnpD2XaLapUh-v28U1qD9zefOLuDAuurgJGjLaGwj_DQ.jpg"
-          }
+          src="https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2Fnataliavatar.png?alt=media&token=4225e739-c2dd-4f52-83a5-8a9512424817"
           alt="avat"
         />
         <div className={styles.about_summary}>
           <span>Photographer & Filmmaker</span>
-          <h1>Nataliia Lypovenko</h1>
+
+          <Link
+            className={styles.redirect_to_blog}
+            to="https://www.instagram.com/netaliminchenko/"
+          >
+            <h1>Nataliia Lypovenko</h1>
+            <Share />
+          </Link>
+
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
             velit possimus nostrum rem, adipisci reprehenderit beatae nisi
