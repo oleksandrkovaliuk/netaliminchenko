@@ -6,8 +6,8 @@ export const FourthSection = () => {
   const getCategories = new Set(Data.map((item) => item.category));
   const collectCategories = [...getCategories];
 
-  const [activeCategories, setActiveCategories] = useState(
-    collectCategories[0]
+  const [activeCategories, setActiveCategories] = useState<string>(
+    collectCategories[0] || ""
   );
   const [showingImgs, setShowingImg] = useState(null);
   useEffect(() => {
