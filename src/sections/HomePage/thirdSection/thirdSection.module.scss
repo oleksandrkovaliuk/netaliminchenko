@@ -1,3 +1,46 @@
 .projects_wrap {
   display: block;
+  margin-bottom: 100px;
+  .all_projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: var(--color-white);
+    font-size: 20px;
+    font-family: var(--font-SfThin);
+    svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      path {
+        fill: var(--color-white);
+      }
+    }
+    a {
+      color: var(--color-white);
+      text-decoration: unset;
+      transition: all 0.4s ease-in-out;
+      position: relative;
+      &::before {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 10%;
+        transform: scale(1);
+        // transform-origin: left;
+        height: 1px;
+        background-color: var(--color-white);
+        transition: all 0.4s ease-in-out;
+      }
+      &:hover {
+        transform: scale(1.02);
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

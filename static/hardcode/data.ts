@@ -1,5 +1,3 @@
-import { link } from "fs";
-
 export const Data = [
   {
     id: 1,
@@ -202,7 +200,7 @@ export const Data = [
       {
         imgId: 1,
         imgUrl:
-          "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-58-44.png?alt=media&token=4423fd48-dd3a-4a6c-9cd8-0482ef847a6f",
+          "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-58-09.png?alt=media&token=3f6dcabc-1427-4cab-a260-ac729a55dda7",
         postUrl: "https://www.instagram.com/p/CkTlZBgp20i/?img_index=2",
       },
       {
@@ -296,13 +294,13 @@ export const Data = [
       {
         imgId: 1,
         imgUrl:
-          "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-58-44.png?alt=media&token=4423fd48-dd3a-4a6c-9cd8-0482ef847a6f",
+          "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-57-52.png?alt=media&token=62e86e2f-bc9d-4c05-8f4c-854f272281d8",
         postUrl: "https://www.instagram.com/p/CkTlZBgp20i/?img_index=2",
       },
       {
         imgId: 2,
         imgUrl:
-          "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-57-52.png?alt=media&token=62e86e2f-bc9d-4c05-8f4c-854f272281d8",
+          "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-58-44.png?alt=media&token=4423fd48-dd3a-4a6c-9cd8-0482ef847a6f",
         postUrl: "https://www.instagram.com/p/CkTlZBgp20i/?img_index=2",
       },
       {
