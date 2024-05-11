@@ -1,96 +1,44 @@
 backend:
-  name: test-repo
+  name: test-repo #git-gateway
   branch: master
 
-media_folder: static/images
-public_folder: /images
+media_folder: static/images/uploads
+public_folder: /images/uploads
 
 collections:
   - name: "products"
-    label: "ДІЯТИ БЕЗ СПРОТИВУ"
-    folder: "content/products"
+    label: "Post"
+    folder: "content"
     create: true
-    slug: "{{label}}-{{month}}-{{year}}-{{minute}}"
+    slug: "{{slug}}"
     media_folder: ""
     public_folder: ""
-    path: "{{label}}-{{month}}-{{year}}-{{minute}}/index"
+    path: "{{slug}}/index"
     editor:
-      preview: false
+      preview: true
     fields:
-      - { label: "Up title", name: "upTitle", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Sub title", name: "subTitle", widget: "string" }
-      - { label: "Action btn", name: "actionBtn", widget: "string" }
-      - label: "Список Тарифів"
-        name: "tariffs"
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - {
+          label: "Short description",
+          name: "short_description",
+          widget: "string",
+        }
+      - { label: "Full description", name: "full_disc", widget: "string" }
+      - label: "All Imgs"
+        name: "all_imgs"
         widget: "list"
         fields:
           - {
-              label: "Title",
-              name: "title",
+              name: "imgUrl",
+              label: "Img Url",
               widget: "string",
-              default: "Коучинговий урок",
+              default: "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-58-44.png?alt=media&token=4423fd48-dd3a-4a6c-9cd8-0482ef847a6f",
             }
-          - label: "Submit Button"
-            name: "button"
-            widget: "object"
-            fields:
-              - {
-                  name: "text",
-                  label: "Text",
-                  widget: "string",
-                  default: "Купити",
-                }
-              - {
-                  name: "link",
-                  label: "Link on pay",
-                  widget: "string",
-                  default: "https://secure.wayforpay.com/button/bbc630ca1b402",
-                }
-              - { name: "price", label: "Price", widget: "number", default: 50 }
-              - {
-                  name: "discountPrice",
-                  label: "discount price",
-                  widget: "number",
-                  default: 30,
-                }
-              - {
-                  name: "isEnabledBtn",
-                  label: "Show submit button",
-                  widget: "boolean",
-                  default: true,
-                }
-          - label: "Пункти опису"
-            name: "textList"
-            widget: "list"
-            fields:
-              - label: "List"
-                name: "listAndSubList"
-                widget: "object"
-                fields:
-                  - label: "listItem"
-                    name: "listItem"
-                    widget: "object"
-                    fields:
-                      - {
-                          name: "text",
-                          label: "Text",
-                          widget: "string",
-                          default: "Урок який складається з 3 частин:",
-                        }
-                      - {
-                          name: "isLineThrough",
-                          label: "Is Line Through",
-                          widget: "boolean",
-                          default: false,
-                        }
-                  - label: "Під пункти"
-                    name: "listOfSubItems"
-                    widget: "list"
-                    fields:
-                      - {
-                          label: "Sub Item",
-                          name: "subItem",
-                          widget: "string",
-                          default: "Ясність, що саме Вам заважає",
-                        }
+          - {
+              name: "postUrl",
+              label: "Post Url",
+              widget: "string",
+              default: "https://www.instagram.com/p/CkTlZBgp20i/?img_index=2",
+            }

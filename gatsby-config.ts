@@ -7,33 +7,49 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-netlify-cms",
     "gatsby-plugin-layout",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-netlify-cms",
+    "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 50,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-transformer-remark",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images`,
       },
       __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "contant",
+        path: `${__dirname}/content`,
       },
       __key: "pages",
     },
