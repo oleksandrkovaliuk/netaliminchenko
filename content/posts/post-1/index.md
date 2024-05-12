@@ -4,7 +4,7 @@
   title: "Nature photo shoots"
   location: "Edmonton , AB"
   category: "Nature shoot"
-  short_description:
+  description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta laboriosam, iure dignissimos, ad et dolorum illo nesciunt, impedit obcaecati tempore aliquam quidem suscipit itaque necessitatibus! Laborum consequatur repellat impedit ex."
   full_description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta laboriosam, iure dignissimos, ad et dolorum illo nesciunt, impedit obcaecati tempore aliquam quidem suscipit itaque necessitatibus! Laborum consequatur repellat impedit ex.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta laboriosam, iure dignissimos, ad et dolorum illo nesciunt, impedit obcaecati tempore aliquam quidem suscipit itaque necessitatibus! Laborum consequatur repellat impedit ex.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta laboriosam, iure dignissimos, ad et dolorum illo nesciunt, impedit obcaecati tempore aliquam quidem suscipit itaque necessitatibus! Laborum consequatur repellat impedit ex.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta laboriosam, iure dignissimos, ad et dolorum illo nesciunt, impedit obcaecati tempore aliquam quidem suscipit itaque necessitatibus! Laborum consequatur repellat impedit ex."

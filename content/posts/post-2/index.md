@@ -2,7 +2,7 @@
 title: "Назва продукту"
 location: "Місце"
 category: "Категорія"
-short_description: "Короткий опис продукту"
+description: "Короткий опис продукту"
 full_description: "Повний опис продукту"
 all_imgs:
   - imgUrl: /images/secondImg.jpeg

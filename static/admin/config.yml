@@ -22,7 +22,7 @@ collections:
       - { label: "Category", name: "category", widget: "string" }
       - {
           label: "Short description",
-          name: "short_description",
+          name: "description",
           widget: "string",
         }
       - {

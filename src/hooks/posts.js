@@ -11,7 +11,7 @@ export const useProytySuprotyv = () => {
             category
             location
             title
-            short_description
+            description
             full_description
           }
         }
@@ -24,7 +24,7 @@ export const useProytySuprotyv = () => {
     category,
     location,
     full_description,
-    short_description,
+    description,
   } = nodes[0]?.frontmatter;
 
   return {
@@ -34,6 +34,6 @@ export const useProytySuprotyv = () => {
     all_imgs,
     full_disc,
     full_description,
-    short_description,
+    description,
   };
 };

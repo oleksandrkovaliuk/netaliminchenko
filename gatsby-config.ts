@@ -54,8 +54,16 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "contant",
-        path: `${__dirname}/content`,
+        name: "posts",
+        path: `${__dirname}/content/posts`,
+      },
+      __key: "posts",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: `${__dirname}/content/pages`,
       },
       __key: "pages",
     },
