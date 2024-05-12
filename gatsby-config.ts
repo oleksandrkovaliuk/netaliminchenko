@@ -9,11 +9,17 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-layout",
     "gatsby-plugin-sass",
-    "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
     "gatsby-plugin-netlify-cms",
     "gatsby-transformer-remark",
+    {
+      resolve: 'gatsby-plugin-image',
+      options: {
+        // Name of the folder where you store your images
+        staticFolder: 'static',
+      },
+    },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {

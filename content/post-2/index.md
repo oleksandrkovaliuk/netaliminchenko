@@ -3,10 +3,10 @@ title: "Назва продукту"
 location: "Місце"
 category: "Категорія"
 short_description: "Короткий опис продукту"
-full_disc: "Повний опис продукту"
+full_description: "Повний опис продукту"
 all_imgs:
-  - imgUrl: "https://посилання_на_зображення_1.jpg"
+  - imgUrl: /images/secondImg.jpeg
     postUrl: "https://www.instagram.com/p/посилання_на_пост_1/"
-  - imgUrl: "https://посилання_на_зображення_2.jpg"
+  - imgUrl: /images/secondImg.jpeg
     postUrl: "https://www.instagram.com/p/посилання_на_пост_2/"
 ---

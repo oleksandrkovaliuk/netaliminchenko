@@ -10,10 +10,10 @@ collections:
     label: "Post"
     folder: "content"
     create: true
-    slug: "{{slug}}"
-    media_folder: ""
-    public_folder: ""
-    path: "{{slug}}/index"
+    slug: "{{title}}-{{year}}-{{month}}-{{day}}-{{minute}}"
+    media_folder: "static/images/uploads"
+    public_folder: "/images/uploads"
+    path: "{{title}}-{{year}}-{{month}}-{{day}}-{{minute}}/index"
     editor:
       preview: true
     fields:
@@ -25,7 +25,11 @@ collections:
           name: "short_description",
           widget: "string",
         }
-      - { label: "Full description", name: "full_disc", widget: "string" }
+      - {
+          label: "Full description",
+          name: "full_description",
+          widget: "string",
+        }
       - label: "All Imgs"
         name: "all_imgs"
         widget: "list"
