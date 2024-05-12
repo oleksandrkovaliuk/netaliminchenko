@@ -56,6 +56,27 @@
         font-size: 18px;
         color: var(--color-white);
         font-family: var(--font-SfThin);
+        margin-bottom: 20px;
+      }
+      .about_me {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: unset;
+        border-radius: 8px;
+        text-decoration: unset;
+        transition: all 0.4s ease-in-out;
+        transform: translateY(0px);
+        min-width: 140px;
+        display: inline-block;
+        font-size: 18px;
+        font-family: var(--font-SfMedium);
+        color: var(--color-bg);
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 1);
+          transform: translateY(-4px);
+        }
       }
     }
   }

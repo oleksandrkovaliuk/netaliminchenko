@@ -37,6 +37,9 @@ export const FirstSection = () => {
             officiis ipsa repellat, neque, vero id! Enim totam quod, itaque
             aliquam pariatur hic!
           </p>
+          <Link to="/about" className={styles.about_me}>
+            More about me
+          </Link>
         </div>
       </div>
     </div>

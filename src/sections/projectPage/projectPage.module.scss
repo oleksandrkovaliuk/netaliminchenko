@@ -47,7 +47,7 @@
     width: 100%;
     .all_imgs {
       display: flex;
-      gap: 20px;
+      gap: 10px;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
@@ -57,6 +57,7 @@
         cursor: pointer;
       }
       img {
+        max-width: 500px;
         border-radius: 5px;
         transition: all 0.5s ease-in-out;
         &:hover {

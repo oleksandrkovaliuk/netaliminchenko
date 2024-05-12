@@ -19,7 +19,6 @@ export const ThirdSection = () => {
         />
       ))}
       <span className={styles.all_projects}>
-        Liked my works then <RightTo />
         <Link to="/projects">Explore all projects</Link>
       </span>
     </div>
