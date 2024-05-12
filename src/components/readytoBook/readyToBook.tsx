@@ -6,8 +6,7 @@ import { Telegram } from "../../icons/telegram";
 export const ReadyToBook = () => {
   return (
     <div className={styles.ready_to_book}>
-      <h1 className={styles.title}>Ready to book ?</h1>
-      <span>Lets chat</span>
+      <h1 className={styles.title}>Ready to book ? Lets chat</h1>
       <div className={styles.way_to_contact}>
         <div className={styles.social_media}>
           <div className={styles.telegram}>

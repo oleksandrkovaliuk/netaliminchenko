@@ -13,9 +13,7 @@ export const FourthSection = () => {
   useEffect(() => {
     const filteredItem = Data.filter(
       (item) => activeCategories === item.category
-    )
-      .map((filtered) => filtered.all_img)
-      .flatMap((imgs) => imgs);
+    );
     setShowingImg(filteredItem);
   }, [activeCategories]);
 
@@ -37,9 +35,9 @@ export const FourthSection = () => {
       </div>
 
       <ul className={styles.items_by_categorie}>
-        {showingImgs?.slice(0, 9).map((item) => (
-          <li key={item.imgId} className={styles.preview_imgs}>
-            <img src={item.imgUrl} alt="preview" />
+        {showingImgs?.map((item) => (
+          <li key={item.id} className={styles.preview_imgs}>
+            <img src={item.prevew_img} alt="preview" />
           </li>
         ))}
       </ul>

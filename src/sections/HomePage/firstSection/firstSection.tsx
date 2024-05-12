@@ -1,15 +1,25 @@
 import React from "react";
 import * as styles from "./firstSection.module.scss";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { Share } from "../../../icons/share";
+import Img from "gatsby-image";
 export const FirstSection = () => {
+  const query = useStaticQuery(graphql`
+    query MyQuery {
+      file(relativePath: { eq: "avatar.png" }) {
+        childrenImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <div className={styles.first_wrap}>
       <div className={styles.about}>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2Fnataliavatar.png?alt=media&token=4225e739-c2dd-4f52-83a5-8a9512424817"
-          alt="avat"
-        />
+        <img src="/avatar.png" alt="avat" />
         <div className={styles.about_summary}>
           <span>Photographer & Filmmaker</span>
 

@@ -4,11 +4,13 @@
   .all_projects {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 2px;
     color: var(--color-white);
     font-size: 20px;
     font-family: var(--font-SfThin);
+    max-width: 1000px;
+    margin: auto;
     svg {
       width: 17px;
       height: 17px;
