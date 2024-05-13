@@ -2,13 +2,23 @@ import React from "react";
 import * as styles from "./fifthSection.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Data } from "../../../../static/hardcode/data";
 import { Instagram } from "../../../icons/instagram";
 import { Share } from "../../../icons/share";
 import { ReadyToBook } from "../../../components/readytoBook";
 import Slider from "react-slick";
 import "./slider.scss";
+import { useExtractAllProjects } from "../../../hooks/posts";
+type resultTypes = {
+  id: number;
+  customerReview: {
+    link: string;
+    customerImg: string;
+    customerFeedBack: string;
+    customerName: string;
+  };
+};
 export const FifthSection = () => {
+  const Data = useExtractAllProjects();
   const settings = {
     dots: true,
     arrows: false,
@@ -26,7 +36,7 @@ export const FifthSection = () => {
         <span className={styles.title}>Kind words</span>
         <div className={styles.kind_words_container}>
           <Slider {...settings}>
-            {Data.map((item) => (
+            {Data.map((item: resultTypes) => (
               <div key={item.id} className={styles.kind_words_wrap}>
                 <div className={styles.review_text}>
                   <p>"{item.customerReview.customerFeedBack}""</p>

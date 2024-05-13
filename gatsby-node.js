@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: "slug",
-      value: source === "posts" ? `/post${slug}` : slug,
+      value: source === "posts" ? `/project${slug}` : slug,
     });
 
     createNodeField({
@@ -44,8 +44,23 @@ exports.createPages = ({ graphql, actions }) => {
                     source
                   }
                   frontmatter {
+                    id
                     title
+                    location
+                    category
                     description
+                    full_description
+                    all_img {
+                      imgId
+                      imgUrl
+                      postUrl
+                    }
+                    customerReview {
+                      link
+                      customerImg
+                      customerFeedBack
+                      customerName
+                    }
                   }
                 }
               }

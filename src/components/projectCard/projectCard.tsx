@@ -33,7 +33,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <img src={img} alt="projectImgs" />
 
-        <Link to={`/projectPage?projectId=${id}`}>
+        <Link to={`/project/${title.split(" ").join("").toLocaleLowerCase()}`}>
           <button className={styles.explore_btn}>Explore more</button>
         </Link>
       </div>

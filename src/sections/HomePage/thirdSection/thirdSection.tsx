@@ -1,21 +1,29 @@
 import React from "react";
 import * as styles from "./thirdSection.module.scss";
 import { ProjectCard } from "../../../components/projectCard";
-import { Data } from "../../../../static/hardcode/data";
 import { Link } from "gatsby";
-import { RightTo } from "../../../icons/rightTo";
-import { Share } from "../../../icons/share";
+import { useExtractAllProjects } from "../../../hooks/posts";
+type ProjectsType = {
+  id: number;
+  title: string;
+  location: string;
+  category: string;
+  description: string;
+  prevew_img: string;
+};
 export const ThirdSection = () => {
+  const projects = useExtractAllProjects();
+  console.log(projects, "check");
   return (
     <div className={styles.projects_wrap}>
-      {Data.slice(0, 4).map((item) => (
+      {projects.map((item: ProjectsType) => (
         <ProjectCard
           key={item.id}
           id={item.id}
           img={item.prevew_img}
           location={item.location}
           title={item.title}
-          shortDisc={item.short_disc}
+          shortDisc={item.description}
         />
       ))}
       <span className={styles.all_projects}>
