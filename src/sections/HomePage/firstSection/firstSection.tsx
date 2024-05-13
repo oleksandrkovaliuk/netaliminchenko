@@ -6,7 +6,7 @@ export const FirstSection = () => {
   return (
     <div className={styles.first_wrap}>
       <div className={styles.about}>
-        <img src="/secondImg.jpeg" alt="avat" />
+        <img src="/avatar.png" alt="avat" />
         <div className={styles.about_summary}>
           <span>Photographer & Filmmaker</span>
 
