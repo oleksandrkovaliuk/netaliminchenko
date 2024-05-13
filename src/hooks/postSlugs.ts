@@ -6,10 +6,10 @@ type resultTypes = {
     location: string;
     description: string;
     prevew_img: string;
-  }
+  };
   fields: {
     slug: string;
-  }
+  };
 };
 export const usePostSlugs = () => {
   const {
@@ -25,7 +25,7 @@ export const usePostSlugs = () => {
             id
             title
             location
-            prevew_img
+            preview_img
             description
           }
           fields {
@@ -36,12 +36,5 @@ export const usePostSlugs = () => {
     }
   `);
 
-  return nodes.map((node: resultTypes) => ({
-    id: node.frontmatter.id,
-    title: node.frontmatter.title,
-    slug: node.fields.slug,
-    location: node.frontmatter.location,
-    prevew_img: node.frontmatter.prevew_img,
-    description: node.frontmatter.description,
-  }));
+  return nodes;
 };

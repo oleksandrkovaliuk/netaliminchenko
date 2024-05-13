@@ -8,15 +8,7 @@ import { ReadyToBook } from "../../../components/readytoBook";
 import Slider from "react-slick";
 import "./slider.scss";
 import { useExtractAllProjects } from "../../../hooks/posts";
-type resultTypes = {
-  id: number;
-  customerReview: {
-    link: string;
-    customerImg: string;
-    customerFeedBack: string;
-    customerName: string;
-  };
-};
+import { customerReviewTypes } from "../../../types/dataTypes";
 export const FifthSection = () => {
   const Data = useExtractAllProjects();
   const settings = {
@@ -36,15 +28,15 @@ export const FifthSection = () => {
         <span className={styles.title}>Kind words</span>
         <div className={styles.kind_words_container}>
           <Slider {...settings}>
-            {Data.map((item: resultTypes) => (
-              <div key={item.id} className={styles.kind_words_wrap}>
+            {Data.map((item: { frontmatter: customerReviewTypes }) => (
+              <div key={item.frontmatter.id} className={styles.kind_words_wrap}>
                 <div className={styles.review_text}>
-                  <p>"{item.customerReview.customerFeedBack}""</p>
+                  <p>"{item.frontmatter.customerReview.customerFeedBack}""</p>
                   <div className={styles.customer}>
-                    <a href={item.customerReview.link}>
+                    <a href={item.frontmatter.customerReview.link}>
                       <span>
-                        {item.customerReview.customerName} <Instagram />{" "}
-                        <Share />
+                        {item.frontmatter.customerReview.customerName}{" "}
+                        <Instagram /> <Share />
                       </span>
                       <span>Explore project</span>
                     </a>

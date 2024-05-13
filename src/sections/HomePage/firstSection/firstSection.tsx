@@ -1,21 +1,8 @@
 import React from "react";
 import * as styles from "./firstSection.module.scss";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import { Share } from "../../../icons/share";
-import Img from "gatsby-image";
 export const FirstSection = () => {
-  const query = useStaticQuery(graphql`
-    query MyQuery {
-      file(relativePath: { eq: "avatar.png" }) {
-        childrenImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <div className={styles.first_wrap}>
       <div className={styles.about}>

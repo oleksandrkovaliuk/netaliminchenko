@@ -38,7 +38,7 @@ export const useExtractAllProjects = () => {
             category
             description
             full_description
-            prevew_img
+            preview_img
             all_img {
               imgId
               imgUrl
@@ -56,16 +56,5 @@ export const useExtractAllProjects = () => {
       }
     }
   `);
-
-  return nodes.map((node: { frontmatter: resultTypes }) => ({
-    id: node.frontmatter.id,
-    title: node.frontmatter.title,
-    category: node.frontmatter.category,
-    location: node.frontmatter.location,
-    prevew_img: node.frontmatter.prevew_img,
-    full_description: node.frontmatter.full_description,
-    all_img: node.frontmatter.all_img,
-    customerReview: node.frontmatter.customerReview,
-    description: node.frontmatter.description,
-  }));
+  return nodes;
 };

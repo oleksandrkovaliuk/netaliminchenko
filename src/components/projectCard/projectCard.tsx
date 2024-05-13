@@ -3,19 +3,19 @@ import * as styles from "./projectCard.module.scss";
 import { Link } from "gatsby";
 import { motion, useInView } from "framer-motion";
 import { Location } from "../../icons/location";
-interface ProjectCardProps {
-  img: string;
+type ProjectCardType = {
+  preview_img: string;
+  slug: string;
   title: string;
-  shortDisc: string;
+  description: string;
   id: number;
   location: string;
-  slug: string;
-}
-export const ProjectCard: React.FC<ProjectCardProps> = ({
-  img,
+};
+export const ProjectCard: React.FC<ProjectCardType> = ({
+  preview_img,
   slug,
   title,
-  shortDisc,
+  description,
   id,
   location,
 }) => {
@@ -26,6 +26,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   });
 
   const isCardEven = id % 2 === 0;
+  console.log(
+    preview_img,
+    slug,
+    title,
+    description,
+    id,
+    location,
+    "incoming data to projects"
+  );
 
   return (
     <div ref={cardRef} className={styles.project_card}>
@@ -33,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         style={cardInView ? { scale: "1" } : { scale: "0.9" }}
         className={styles.img_block}
       >
-        <img src={img} alt="projectImgs" />
+        <img src={preview_img} alt="projectImgs" />
 
         <Link to={slug}>
           <button className={styles.explore_btn}>Explore more</button>
@@ -59,7 +68,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         }
       >
         <h1>{title}</h1>
-        <p>{shortDisc}</p>
+        <p>{description}</p>
         <span className={styles.location}>
           <Location />
           {location}

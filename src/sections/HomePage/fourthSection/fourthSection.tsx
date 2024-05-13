@@ -2,20 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import * as styles from "./fourthSection.module.scss";
 import { motion, useInView } from "framer-motion";
 import { useExtractAllProjects } from "../../../hooks/posts";
-type categoryTypes = {
-  id: number;
-  category: string;
-  customerReview: {
-    link: string;
-    customerImg: string;
-    customerFeedBack: string;
-    customerName: string;
-  };
-};
+import { customerReviewTypes } from "../../../types/dataTypes";
 type itemTypes = {
   id: number;
   item: string;
-  prevew_img: string;
+  preview_img: string;
 };
 export const FourthSection = () => {
   const Data = useExtractAllProjects();
@@ -23,25 +14,22 @@ export const FourthSection = () => {
 
   const imgsInView = useInView(imgsRef, { amount: "some", once: true });
   const getCategories = new Set(
-    Data.map((item: categoryTypes) => item.category)
+    Data.map(
+      (item: { frontmatter: customerReviewTypes }) => item.frontmatter.category
+    )
   );
   const collectCategories = [...getCategories];
 
   const [activeCategories, setActiveCategories] = useState<string>(
-    collectCategories[0] || " "
+    collectCategories[0]
   );
-  const [showingImgs, setShowingImg] = useState([]);
-  const [onSelectCategory, setOnSelectCategory] = useState(false);
+  const [showingImgs, setShowingImgs] = useState([]);
   useEffect(() => {
-    const filteredItem = Data.filter(
-      (item: categoryTypes) => activeCategories === item.category
-    );
-    setShowingImg(filteredItem);
-    setOnSelectCategory(!onSelectCategory);
+    const filteredItem = Data.map(
+      (project: { frontmatter: customerReviewTypes }) => project.frontmatter
+    ).filter((item: customerReviewTypes) => activeCategories === item.category);
+    setShowingImgs(filteredItem);
   }, [activeCategories]);
-  useEffect(() => {
-    setOnSelectCategory(false);
-  }, []);
   return (
     <div className={styles.categories_wrap}>
       <div className={styles.chose_categories}>
@@ -70,7 +58,7 @@ export const FourthSection = () => {
       >
         {showingImgs.map((item: itemTypes) => (
           <li key={item.id} className={styles.preview_imgs}>
-            <img src={item.prevew_img} alt="preview" />
+            <img src={item.preview_img} alt="preview" />
           </li>
         ))}
       </motion.ul>

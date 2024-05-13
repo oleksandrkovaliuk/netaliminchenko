@@ -5,31 +5,10 @@ import { useInView, motion, useScroll, useTransform } from "framer-motion";
 import * as styles from "./postTemplate.module.scss";
 import { Instagram } from "../icons/instagram";
 import { Share } from "../icons/share";
-type FrontmatterProps = {
-  id: number;
-  title: string;
-  location: string;
-  category: string;
-  description: string;
-  full_description: string;
-  all_img: [
-    {
-      imgId: number;
-      imgUrl: string;
-      postUrl: string;
-    }
-  ];
-  customerReview: {
-    link: string;
-    customerImg: string;
-    customerFeedBack: string;
-    customerName: string;
-  };
-};
-
+import { ProjectsType } from "../types/dataTypes";
 type PostTemplateProps = {
   data: {
-    page: { frontmatter: FrontmatterProps };
+    page: { frontmatter: ProjectsType };
   };
 };
 const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
@@ -71,7 +50,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
         transition={{ type: "spring", duration: 0.3, stiffness: 50 }}
       >
         <motion.video style={{ borderRadius }} autoPlay muted loop>
-          <source src="https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2Fvideoplayback.mp4?alt=media&token=411aed5a-8671-4927-bb2d-a815f92cf015"></source>
+          <source src={frontmatter.preview_video}></source>
         </motion.video>
         <div className={styles.project_disc}>
           <span>{frontmatter.location}</span>
@@ -148,6 +127,7 @@ export const pageQuery = graphql`
         category
         description
         full_description
+        preview_video
         all_img {
           imgId
           imgUrl
