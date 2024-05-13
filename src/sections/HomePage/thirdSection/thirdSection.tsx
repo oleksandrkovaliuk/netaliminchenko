@@ -7,13 +7,6 @@ import { ProjectsType } from "../../../types/dataTypes";
 
 export const ThirdSection = () => {
   const projects = usePostSlugs();
-  console.log(
-    projects.map(
-      (item: { frontmatter: ProjectsType; fields: ProjectsType }) =>
-        item.fields.slug
-    ),
-    "return items"
-  );
 
   return (
     <div className={styles.projects_wrap}>
@@ -31,7 +24,7 @@ export const ThirdSection = () => {
         )
       )}
       <span className={styles.all_projects}>
-        <Link to="/projects">Explore all projects</Link>
+        <Link to="/allProjects">Explore all projects</Link>
       </span>
     </div>
   );

@@ -26,16 +26,6 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
   });
 
   const isCardEven = id % 2 === 0;
-  console.log(
-    preview_img,
-    slug,
-    title,
-    description,
-    id,
-    location,
-    "incoming data to projects"
-  );
-
   return (
     <div ref={cardRef} className={styles.project_card}>
       <div
