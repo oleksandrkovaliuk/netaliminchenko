@@ -1,6 +1,6 @@
 ---
   id: 3
-  title: "Wedding photo shoote"
+  title: "Wedding photo shoot"
   location: "Vancouver , BC"
   category: "Weeding shoot"
   description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta laboriosam, iure dignissimos, ad et dolorum illo nesciunt, impedit obcaecati tempore aliquam quidem suscipit itaque necessitatibus! Laborum consequatur repellat impedit ex."
