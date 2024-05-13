@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from "react";
+import React, { useRef } from "react";
 import * as styles from "./projectCard.module.scss";
 import { Link } from "gatsby";
 import { motion, useInView } from "framer-motion";
@@ -9,9 +9,11 @@ interface ProjectCardProps {
   shortDisc: string;
   id: number;
   location: string;
+  slug: string;
 }
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   img,
+  slug,
   title,
   shortDisc,
   id,
@@ -33,7 +35,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <img src={img} alt="projectImgs" />
 
-        <Link to={`/project/${title.split(" ").join("").toLocaleLowerCase()}`}>
+        <Link to={slug}>
           <button className={styles.explore_btn}>Explore more</button>
         </Link>
       </div>
