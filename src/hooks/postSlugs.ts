@@ -1,16 +1,4 @@
 import { graphql, useStaticQuery } from "gatsby";
-type resultTypes = {
-  frontmatter: {
-    id: number;
-    title: string;
-    location: string;
-    description: string;
-    prevew_img: string;
-  };
-  fields: {
-    slug: string;
-  };
-};
 export const usePostSlugs = () => {
   const {
     allMarkdownRemark: { nodes },
@@ -18,7 +6,7 @@ export const usePostSlugs = () => {
     query {
       allMarkdownRemark(
         filter: { fields: { slug: { regex: "/project/" } } }
-        sort: { frontmatter: { id: ASC } }
+        sort: { frontmatter: { complete_date: DESC } }
       ) {
         nodes {
           frontmatter {
@@ -27,6 +15,7 @@ export const usePostSlugs = () => {
             location
             preview_img
             description
+            complete_date(fromNow: true)
           }
           fields {
             slug

@@ -18,6 +18,7 @@ export type ProjectsType = {
   full_description: string;
   preview_img: string;
   preview_video: string;
+  complete_date: string;
   all_img: [
     {
       imgId: number;

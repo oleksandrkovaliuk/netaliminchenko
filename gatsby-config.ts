@@ -14,10 +14,10 @@ const config: GatsbyConfig = {
     "gatsby-plugin-netlify-cms",
     "gatsby-transformer-remark",
     {
-      resolve: 'gatsby-plugin-image',
+      resolve: "gatsby-plugin-image",
       options: {
         // Name of the folder where you store your images
-        staticFolder: 'static',
+        staticFolder: "static",
       },
     },
     {
@@ -54,10 +54,10 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "posts",
-        path: `${__dirname}/content/posts`,
+        name: "projects",
+        path: `${__dirname}/content/projects`,
       },
-      __key: "posts",
+      __key: "projects",
     },
     {
       resolve: "gatsby-source-filesystem",

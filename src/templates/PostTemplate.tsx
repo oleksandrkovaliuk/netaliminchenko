@@ -54,6 +54,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
         </motion.video>
         <div className={styles.project_disc}>
           <span>{frontmatter.location}</span>
+          <span>{frontmatter.complete_date}</span>
         </div>
       </motion.div>
       <motion.div className={styles.project_info}>
@@ -128,6 +129,7 @@ export const pageQuery = graphql`
         description
         full_description
         preview_video
+        complete_date(fromNow: true)
         all_img {
           imgId
           imgUrl

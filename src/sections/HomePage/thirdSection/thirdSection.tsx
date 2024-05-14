@@ -11,15 +11,19 @@ export const ThirdSection = () => {
   return (
     <div className={styles.projects_wrap}>
       {projects.map(
-        (item: { frontmatter: ProjectsType; fields: ProjectsType }) => (
+        (
+          item: { frontmatter: ProjectsType; fields: ProjectsType },
+          i: number
+        ) => (
           <ProjectCard
             key={item.frontmatter.id}
-            id={item.frontmatter.id}
+            index={i}
             slug={item.fields.slug}
             preview_img={item.frontmatter.preview_img}
             location={item.frontmatter.location}
             title={item.frontmatter.title}
             description={item.frontmatter.description}
+            completedDate={item.frontmatter.complete_date}
           />
         )
       )}

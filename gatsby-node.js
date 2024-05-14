@@ -10,11 +10,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const slug = createFilePath({ node, getNode });
     const fileNode = getNode(node.parent);
     const source = fileNode.sourceInstanceName;
-
+    console.log(source, slug, "source-slug");
     createNodeField({
       node,
       name: "slug",
-      value: source === "posts" ? `/project${slug}` : slug,
+      value: source === "projects" ? `/project${slug}` : slug,
     });
 
     createNodeField({
@@ -50,6 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
                     category
                     description
                     full_description
+                    complete_date
                     all_img {
                       imgId
                       imgUrl
@@ -77,7 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create posts
         const posts = items.filter(
-          (item) => item.node.fields.source === "posts"
+          (item) => item.node.fields.source === "projects"
         );
         posts.forEach(({ node }) => {
           const slug = node.fields.slug;

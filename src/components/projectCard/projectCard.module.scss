@@ -94,20 +94,26 @@
       font-family: var(--font-SfThin);
       margin-bottom: 5px;
     }
-    .location {
+    .location_time {
       display: flex;
+      gap: 20px;
       align-items: center;
-      gap: 4px;
-
-      font-size: 13px;
-      font-family: var(--font-SfMedium);
-      color: var(--color-white);
-      svg {
-        width: 15px;
-        height: 15px;
-        flex-shrink: 0;
-        path {
-          fill: var(--color-white);
+      span {
+        font-size: 13px;
+        font-family: var(--font-SfMedium);
+        color: var(--color-white);
+      }
+      .location {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        svg {
+          width: 15px;
+          height: 15px;
+          flex-shrink: 0;
+          path {
+            fill: var(--color-white);
+          }
         }
       }
     }

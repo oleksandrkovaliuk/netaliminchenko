@@ -8,24 +8,27 @@ type ProjectCardType = {
   slug: string;
   title: string;
   description: string;
-  id: number;
+  index: number;
   location: string;
+  completedDate: string;
 };
 export const ProjectCard: React.FC<ProjectCardType> = ({
   preview_img,
   slug,
   title,
   description,
-  id,
+  index,
   location,
+  completedDate,
 }) => {
   const cardRef = useRef(null);
   const cardInView = useInView(cardRef, {
     amount: "all",
     once: true,
   });
+  console.log(completedDate, "date");
 
-  const isCardEven = id % 2 === 0;
+  const isCardEven = (index + 1) % 2 === 0;
   return (
     <div ref={cardRef} className={styles.project_card}>
       <div
@@ -59,10 +62,13 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
       >
         <h1>{title}</h1>
         <p>{description}</p>
-        <span className={styles.location}>
-          <Location />
-          {location}
-        </span>
+        <div className={styles.location_time}>
+          <span className={styles.location}>
+            <Location />
+            {location}
+          </span>
+          <span>{completedDate}</span>
+        </div>
       </motion.div>
     </div>
   );

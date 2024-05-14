@@ -36,11 +36,7 @@ export const FourthSection = () => {
         <span className={styles.title}>Browse all categories</span>
         <ul className={styles.categories_picker}>
           {collectCategories.map((item) => (
-            <li
-              key={item}
-              data-picked={activeCategories === item}
-              className={styles.categories}
-            >
+            <li key={item} data-picked={activeCategories === item}>
               <button onClick={() => setActiveCategories(item)}>{item}</button>
             </li>
           ))}
