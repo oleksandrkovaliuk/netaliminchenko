@@ -16,6 +16,10 @@
   --color-bg: #050505;
   --color-white: #ffffff;
 }
+button {
+  background-color: unset;
+  border: none;
+}
 body {
   background-color: var(--color-bg);
   &::-webkit-scrollbar {
@@ -32,6 +36,9 @@ body {
   ::-webkit-scrollbar-corner {
     background-color: var(--color-gray);
     border-radius: 2px;
+  }
+  &.disable_scroll {
+    overflow: hidden;
   }
 }
 

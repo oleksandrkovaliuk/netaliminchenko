@@ -1,4 +1,10 @@
 .all_products_wrap {
   padding: 150px;
-  color: var(--color-white);
+  .title {
+    text-align: center;
+    font-family: var(--font-SfThin);
+    font-weight: unset;
+    color: var(--color-white);
+    margin-bottom: 40px;
+  }
 }

@@ -26,8 +26,6 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
     amount: "all",
     once: true,
   });
-  console.log(completedDate, "date");
-
   const isCardEven = (index + 1) % 2 === 0;
   return (
     <div ref={cardRef} className={styles.project_card}>

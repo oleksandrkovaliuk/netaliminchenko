@@ -1,26 +1,4 @@
 import { graphql, useStaticQuery } from "gatsby";
-type resultTypes = {
-  id: number;
-  title: string;
-  location: string;
-  category: string;
-  description: string;
-  full_description: string;
-  prevew_img: string;
-  all_img: [
-    {
-      imgId: number;
-      imgUrl: string;
-      postUrl: string;
-    }
-  ];
-  customerReview: {
-    link: string;
-    customerImg: string;
-    customerFeedBack: string;
-    customerName: string;
-  };
-};
 export const useExtractAllProjects = () => {
   const {
     allMarkdownRemark: { nodes },
@@ -56,5 +34,5 @@ export const useExtractAllProjects = () => {
       }
     }
   `);
-  return nodes;
+  return [...nodes];
 };
