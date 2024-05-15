@@ -15,6 +15,7 @@ export const usePostSlugs = () => {
             location
             preview_img
             description
+            category
             complete_date(fromNow: true)
           }
           fields {

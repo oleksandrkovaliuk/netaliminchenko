@@ -101,10 +101,12 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
           />
         </div>
         <div className={styles.review}>
-          <p style={feedbackBlockInView ? { opacity: "1" } : { opacity: "0" }}>
-            "{frontmatter.customerReview.customerFeedBack}"
-          </p>
           <a href={frontmatter.customerReview.link}>
+            <p
+              style={feedbackBlockInView ? { opacity: "1" } : { opacity: "0" }}
+            >
+              "{frontmatter.customerReview.customerFeedBack}"
+            </p>
             <span>
               {frontmatter.customerReview.customerName} <Instagram /> <Share />
             </span>

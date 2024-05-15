@@ -3,66 +3,34 @@ import * as styles from "./previewProjectImg.module.scss";
 import { motion, useInView } from "framer-motion";
 type ImgType = {
   src: string;
+  title: string;
+  slug: string;
 };
-export const PreviewProjectImg: React.FC<ImgType> = ({ src }) => {
-  const [showFullInfo, setShowFullInfo] = useState(false);
-  const imgsRef = useRef(null);
-  const imgsInView = useInView(imgsRef, { amount: "some", once: true });
-  useEffect(() => {
-    const body = document.body;
-    if (showFullInfo) {
-      body.classList.add("disable_scroll");
-    }
-    return () => {
-      body.classList.remove("disable_scroll");
-    };
-  }, [showFullInfo]);
+export const PreviewProjectImg: React.FC<ImgType> = ({ src, title, slug }) => {
+  const imgsWrapRef = useRef(null);
+  const imgRef = useRef(null);
+  const imgsInView = useInView(imgsWrapRef, { amount: "some", once: true });
   return (
-    <Fragment>
-      <div
-        className={styles.modal_bg}
-        style={
-          showFullInfo
-            ? { position: "fixed", opacity: "1", pointerEvents: "unset" }
-            : { position: "static", opacity: "0", pointerEvents: "none" }
-        }
-        onClick={() => setShowFullInfo(false)}
-      />
-
-      <motion.button
-        ref={imgsRef}
-        whileTap={{ scale: 0.95 }}
-        style={
-          imgsInView
-            ? {
-                transform: showFullInfo ? "unset" : "translateY(0px)",
-                opacity: "1",
-                transitionDelay: showFullInfo ? " 0.2" : "0.7",
-              }
-            : {
-                transform: showFullInfo ? "unset" : "translateY(70px)",
-                opacity: "0",
-              }
-        }
-        className={styles.img_wrap}
-        onClick={() => setShowFullInfo(true)}
-      >
-        <img
-          style={
-            showFullInfo
-              ? {
-                  transform: "scale(1.2)",
-                  position: "fixed",
-                  top: "20%",
-                  left: "20%",
-                }
-              : { transform: "scale(1)" }
-          }
-          src={src}
-          alt="preview_img"
-          className={styles.img}
-        />
-      </motion.button>
-    </Fragment>
+    <motion.button
+      ref={imgsWrapRef}
+      whileTap={{ scale: 0.95 }}
+      style={
+        imgsInView
+          ? {
+              transform: "translateY(0px)",
+              opacity: "1",
+            }
+          : {
+              transform: "translateY(70px)",
+              opacity: "0",
+            }
+      }
+      className={styles.img_wrap}
+    >
+      <img ref={imgRef} src={src} alt="preview_img" className={styles.img} />
+      <div className={styles.bottom_disc}>
+        <span>{title}</span>
+      </div>
+    </motion.button>
   );
 };

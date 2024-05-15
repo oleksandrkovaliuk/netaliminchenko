@@ -1,43 +1,52 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import * as styles from "./projects.module.scss";
-import { useExtractAllProjects } from "../../hooks/posts";
-import { customerReviewTypes } from "../../types/dataTypes";
+import { ProjectsType } from "../../types/dataTypes";
 import autoAnimate from "@formkit/auto-animate";
 import { PreviewProjectImg } from "../previewProjectsImg";
-type itemTypes = {
-  id: number;
-  item: string;
-  preview_img: string;
-};
+import { usePostSlugs } from "../../hooks/postSlugs";
+import { Link } from "gatsby";
 type ProjectsProps = {
   cuted: boolean;
 };
+
+type projectDataType = {
+  frontmatter: ProjectsType;
+  fields: { slug: string };
+};
 type CategoryType = string;
+
 export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
-  const Data = useExtractAllProjects();
+  const Data = usePostSlugs();
 
   const projectsRef = useRef(null);
-  const getCategories = new Set(
-    Data.map(
-      (item: { frontmatter: customerReviewTypes }) => item.frontmatter.category
+  const projectsData: projectDataType[] = Data.map(
+    (item: projectDataType) => item
+  );
+  const categories: CategoryType[] = Array.from(
+    new Set(
+      projectsData.map((proj: projectDataType) => proj.frontmatter.category)
     )
   );
 
-  const collectCategories = [...getCategories];
+  const [activeCategories, setActiveCategories] = useState<
+    CategoryType | string
+  >(categories[0]);
 
-  const [activeCategories, setActiveCategories] = useState(
-    collectCategories[0]
-  );
+  const [showingImgs, setShowingImgs] = useState<projectDataType[]>([]);
 
-  const [showingImgs, setShowingImgs] = useState([]);
-
-  useEffect(() => {
-    const filteredItem = Data.map(
-      (project: { frontmatter: customerReviewTypes }) => project.frontmatter
-    ).filter((item: customerReviewTypes) => activeCategories === item.category);
-    setShowingImgs(filteredItem);
-  }, [activeCategories]);
-
+  const handleFilteringThroughCategory = (category: string) => {
+    const filteredData = projectsData.filter((item: projectDataType) => {
+      console.log(category === item.frontmatter.category, "filter");
+      return category === item.frontmatter.category;
+    });
+    if (category !== activeCategories) {
+      setActiveCategories(category);
+      setShowingImgs(filteredData);
+    } else {
+      return;
+    }
+  };
+  console.log(showingImgs, activeCategories, "filtered data");
   useEffect(() => {
     projectsRef.current && autoAnimate(projectsRef.current);
   }, [projectsRef]);
@@ -47,17 +56,25 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
       <div className={styles.chose_categories}>
         {cuted && <span className={styles.title}>Browse all categories</span>}
         <ul className={styles.categories_picker}>
-          {collectCategories.map((item: CategoryType) => (
-            <li key={item} data-picked={activeCategories === item}>
-              <button onClick={() => setActiveCategories(item)}>{item}</button>
+          {categories.map((item: CategoryType, i: number) => (
+            <li key={i} data-picked={activeCategories === item}>
+              <button onClick={() => handleFilteringThroughCategory(item)}>
+                {item}
+              </button>
             </li>
           ))}
         </ul>
       </div>
       <ul ref={projectsRef} className={styles.items_by_categorie}>
-        {showingImgs.map((item: itemTypes) => (
-          <li key={item.id} className={styles.preview_imgs}>
-            <PreviewProjectImg src={item.preview_img} />
+        {showingImgs.map((item: projectDataType) => (
+          <li key={item.frontmatter.id} className={styles.preview_imgs}>
+            <Link to={item.fields.slug}>
+              <PreviewProjectImg
+                src={item.frontmatter.preview_img}
+                title={item.frontmatter.title}
+                slug={item.fields.slug}
+              />
+            </Link>
           </li>
         ))}
       </ul>
