@@ -12,11 +12,11 @@ type itemTypes = {
 type ProjectsProps = {
   cuted: boolean;
 };
+type CategoryType = string;
 export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
   const Data = useExtractAllProjects();
 
   const projectsRef = useRef(null);
-
   const getCategories = new Set(
     Data.map(
       (item: { frontmatter: customerReviewTypes }) => item.frontmatter.category
@@ -25,7 +25,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
 
   const collectCategories = [...getCategories];
 
-  const [activeCategories, setActiveCategories] = useState<string>(
+  const [activeCategories, setActiveCategories] = useState(
     collectCategories[0]
   );
 
@@ -47,7 +47,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
       <div className={styles.chose_categories}>
         {cuted && <span className={styles.title}>Browse all categories</span>}
         <ul className={styles.categories_picker}>
-          {collectCategories.map((item) => (
+          {collectCategories.map((item: CategoryType) => (
             <li key={item} data-picked={activeCategories === item}>
               <button onClick={() => setActiveCategories(item)}>{item}</button>
             </li>

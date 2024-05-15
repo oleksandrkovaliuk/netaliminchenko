@@ -7,7 +7,7 @@
 
 .img_wrap {
   position: relative;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   min-height: 625px;
   img {
     max-width: 500px;
@@ -15,5 +15,9 @@
     transition: left 0.4s ease-in-out, top 0.4s ease-in-out;
     z-index: 7;
     transform: translate(-20%, -50%);
+  }
+}
+@keyframes moveImg {
+  0% {
   }
 }

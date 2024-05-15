@@ -34,9 +34,13 @@ export const PreviewProjectImg: React.FC<ImgType> = ({ src }) => {
         whileTap={{ scale: 0.95 }}
         style={
           imgsInView
-            ? { transform: "0px", opacity: "1" }
+            ? {
+                transform: showFullInfo ? "unset" : "translateY(0px)",
+                opacity: "1",
+                transitionDelay: showFullInfo ? " 0.2" : "0.7",
+              }
             : {
-                transform: "70px",
+                transform: showFullInfo ? "unset" : "translateY(70px)",
                 opacity: "0",
               }
         }
