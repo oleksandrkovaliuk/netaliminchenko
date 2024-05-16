@@ -35,7 +35,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
   const [showingImgs, setShowingImgs] = useState<projectDataType[]>([]);
 
   const handleFilteringThroughCategory = (category: string) => {
-    const filteredData = projectsData.filter((item: projectDataType) => {
+    const filteredData = projectsData.filter((item) => {
       console.log(category === item.frontmatter.category, "filter");
       return category === item.frontmatter.category;
     });
