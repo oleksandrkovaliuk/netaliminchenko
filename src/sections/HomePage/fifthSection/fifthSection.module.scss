@@ -28,43 +28,44 @@
             display: flex;
             gap: 5px;
             a {
+              position: relative;
               text-decoration: unset;
-
+              &:nth-child(1) {
+                margin-right: 34px;
+                &::before {
+                  content: " ";
+                  right: -30px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  height: 100%;
+                  width: 1px;
+                  background-color: #fff;
+                  position: absolute;
+                }
+              }
+              &:nth-child(2) {
+                &:hover {
+                  &::before {
+                    width: 100%;
+                  }
+                }
+                &::before {
+                  content: " ";
+                  width: 0px;
+                  height: 1px;
+                  background-color: var(--color-gray);
+                  position: absolute;
+                  bottom: 0;
+                  transition: all 0.4s ease-in-out;
+                }
+              }
               span {
                 color: var(--color-white);
                 font-family: var(--font-SfMedium);
-                position: relative;
+
                 line-height: 100%;
                 transition: all 0.5s ease-in-out;
-                &:nth-child(1) {
-                  margin-right: 40px;
-                  &::before {
-                    content: " ";
-                    right: -30px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    height: 100%;
-                    width: 1px;
-                    background-color: #fff;
-                    position: absolute;
-                  }
-                }
-                &:nth-child(2) {
-                  &:hover {
-                    &::before {
-                      width: 100%;
-                    }
-                  }
-                  &::before {
-                    content: " ";
-                    width: 0px;
-                    height: 1px;
-                    background-color: var(--color-gray);
-                    position: absolute;
-                    bottom: 0;
-                    transition: all 0.4s ease-in-out;
-                  }
-                }
+
                 &:hover {
                   color: var(--color-gray);
                   svg {

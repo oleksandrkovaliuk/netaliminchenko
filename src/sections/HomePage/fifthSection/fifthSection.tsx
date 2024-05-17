@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import "./slider.scss";
 import { useExtractAllProjects } from "../../../hooks/posts";
 import { customerReviewTypes } from "../../../types/dataTypes";
+import { Link } from "gatsby";
 export const FifthSection = () => {
   const Data = useExtractAllProjects();
   const settings = {
@@ -28,22 +29,32 @@ export const FifthSection = () => {
         <span className={styles.title}>Kind words</span>
         <div className={styles.kind_words_container}>
           <Slider {...settings}>
-            {Data.map((item: { frontmatter: customerReviewTypes }) => (
-              <div key={item.frontmatter.id} className={styles.kind_words_wrap}>
-                <div className={styles.review_text}>
-                  <p>"{item.frontmatter.customerReview.customerFeedBack}""</p>
-                  <div className={styles.customer}>
-                    <a href={item.frontmatter.customerReview.link}>
-                      <span>
-                        {item.frontmatter.customerReview.customerName}{" "}
-                        <Instagram /> <Share />
-                      </span>
-                      <span>Explore project</span>
-                    </a>
+            {Data.map(
+              (item: {
+                frontmatter: customerReviewTypes;
+                fields: { slug: string };
+              }) => (
+                <div
+                  key={item.frontmatter.id}
+                  className={styles.kind_words_wrap}
+                >
+                  <div className={styles.review_text}>
+                    <p>"{item.frontmatter.customerReview.customerFeedBack}""</p>
+                    <div className={styles.customer}>
+                      <a href={item.frontmatter.customerReview.link}>
+                        <span>
+                          {item.frontmatter.customerReview.customerName}{" "}
+                          <Instagram /> <Share />
+                        </span>
+                      </a>
+                      <Link to={item.fields.slug}>
+                        <span>Explore project</span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </Slider>
         </div>
       </div>

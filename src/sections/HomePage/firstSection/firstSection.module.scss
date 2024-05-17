@@ -7,12 +7,14 @@
     max-width: 900px;
     width: 100%;
     margin: auto;
+
     img {
       width: 400px;
       height: 400px;
       animation: changeBr 10s linear infinite;
       box-shadow: 0px 1px 10px 0px rgba(128, 128, 128, 0.5);
     }
+
     .about_summary {
       span {
         font-size: 15px;
@@ -61,21 +63,18 @@
       .about_me {
         display: inline-block;
         padding: 5px 10px;
-        background-color: rgba(255, 255, 255, 0.8);
+        padding-left: 0px;
+        padding-top: 0;
+        background-color: transparent;
         border: unset;
-        border-radius: 8px;
         text-decoration: unset;
         transition: all 0.4s ease-in-out;
         transform: translateY(0px);
-        min-width: 140px;
-        display: inline-block;
         font-size: 18px;
-        font-family: var(--font-SfMedium);
-        color: var(--color-bg);
-
+        font-family: var(--font-SfThin);
+        color: rgba(128, 128, 128, 0.7);
         &:hover {
-          background-color: rgba(255, 255, 255, 1);
-          transform: translateY(-4px);
+          color: white;
         }
       }
     }

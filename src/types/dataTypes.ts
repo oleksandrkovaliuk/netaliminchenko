@@ -7,6 +7,9 @@ export type customerReviewTypes = {
     customerFeedBack: string;
     customerName: string;
   };
+  fields: {
+    slug: string;
+  };
 };
 
 export type ProjectsType = {

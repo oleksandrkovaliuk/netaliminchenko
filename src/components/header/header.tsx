@@ -38,10 +38,11 @@ export const Header = () => {
       }}
       className={style.header_wrap}
     >
-      <Link className={style.logo} to="/">
-        nl
-      </Link>
-
+      <abbr title="back to home">
+        <Link className={style.logo} to="/">
+          nl
+        </Link>
+      </abbr>
       <ul className={style.nav}>
         <li>
           <Link to="/about">About Me</Link>
@@ -54,12 +55,16 @@ export const Header = () => {
         </li>
         <li>
           <a href="https://t.me/mylife_ph">
-            <Telegram />
+            <abbr title="telegram">
+              <Telegram />
+            </abbr>
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/netaliphotographer/">
-            <Instagram />
+            <abbr title="instagram">
+              <Instagram />
+            </abbr>
           </a>
         </li>
       </ul>

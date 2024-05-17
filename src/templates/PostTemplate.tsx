@@ -79,7 +79,9 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
         <div className={styles.all_imgs}>
           {frontmatter.all_img.map((item) => (
             <a key={item.imgId} href={item.postUrl}>
-              <img src={item.imgUrl} alt="imgalbum" />
+              <abbr title="check instagram post">
+                <img src={item.imgUrl} alt="imgalbum" />
+              </abbr>
             </a>
           ))}
         </div>

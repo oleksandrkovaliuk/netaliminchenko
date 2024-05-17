@@ -1,5 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
-export const useExtractAllProjects = () => {
+import { ProjectsType } from "../types/dataTypes";
+
+export const useFilteredData = (filterBy: string) => {
   const {
     allMarkdownRemark: { nodes },
   } = useStaticQuery(graphql`
@@ -10,24 +12,9 @@ export const useExtractAllProjects = () => {
       ) {
         nodes {
           frontmatter {
-            id
             title
-            location
             category
-            description
-            full_description
             preview_img
-            all_img {
-              imgId
-              imgUrl
-              postUrl
-            }
-            customerReview {
-              link
-              customerImg
-              customerFeedBack
-              customerName
-            }
             id
           }
           fields {
@@ -37,5 +24,12 @@ export const useExtractAllProjects = () => {
       }
     }
   `);
-  return nodes;
+
+  if (nodes.length) {
+    const resultData = nodes.filter(
+      (item: { frontmatter: ProjectsType; fields: { slug: string } }) =>
+        item.frontmatter.category === filterBy
+    );
+    return resultData;
+  }
 };

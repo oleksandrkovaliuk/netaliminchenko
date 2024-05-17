@@ -20,12 +20,14 @@ export const BackToTopBtn = () => {
     };
   }, []);
   return (
-    <button
-      onClick={handleGoToTop}
-      className={styles.backToTheTop}
-      style={isScrolled ? { opacity: "1" } : { opacity: "0" }}
-    >
-      <Top />
-    </button>
+    <abbr title="back to top">
+      <button
+        onClick={handleGoToTop}
+        className={styles.backToTheTop}
+        style={isScrolled ? { opacity: "1" } : { opacity: "0" }}
+      >
+        <Top />
+      </button>
+    </abbr>
   );
 };

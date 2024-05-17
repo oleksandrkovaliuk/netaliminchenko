@@ -1,5 +1,5 @@
 ---
-  id: 7
+  id: 8
   title: "Personal photo shoot"
   location: "Edmonton, AB"
   category: "Pesonal shoots"

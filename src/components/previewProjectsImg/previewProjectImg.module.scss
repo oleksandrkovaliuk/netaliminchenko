@@ -9,6 +9,12 @@
   transition: all 0.2s ease-in-out;
   min-height: 625px;
   position: relative;
+  overflow: hidden;
+  &:hover {
+    img {
+      scale: 1.1;
+    }
+  }
   &::before,
   &::after {
     content: " ";

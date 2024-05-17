@@ -5,6 +5,7 @@ import autoAnimate from "@formkit/auto-animate";
 import { PreviewProjectImg } from "../previewProjectsImg";
 import { usePostSlugs } from "../../hooks/postSlugs";
 import { Link } from "gatsby";
+import { useFilteredData } from "../../hooks/filteredContent";
 type ProjectsProps = {
   cuted: boolean;
 };
@@ -17,7 +18,6 @@ type CategoryType = string;
 
 export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
   const Data = usePostSlugs();
-
   const projectsRef = useRef(null);
   const projectsData: projectDataType[] = Data.map(
     (item: projectDataType) => item
@@ -32,28 +32,41 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
     CategoryType | string
   >(categories[0]);
 
-  const [showingImgs, setShowingImgs] = useState<projectDataType[]>([]);
+  const [showingImgs, setShowingImgs] = useState<projectDataType[]>(
+    useFilteredData(categories[0])
+  );
 
   const handleFilteringThroughCategory = (category: string) => {
-    const filteredData = projectsData.filter((item) => {
-      console.log(category === item.frontmatter.category, "filter");
-      return category === item.frontmatter.category;
+    setActiveCategories((prevState) => {
+      if (prevState !== category) {
+        setShowingImgs(useFilteredData(category));
+        return category;
+      } else {
+        return prevState;
+      }
     });
-    if (category !== activeCategories) {
-      setActiveCategories(category);
-      setShowingImgs(filteredData);
-    } else {
-      return;
-    }
   };
-  console.log(showingImgs, activeCategories, "filtered data");
   useEffect(() => {
     projectsRef.current && autoAnimate(projectsRef.current);
   }, [projectsRef]);
 
   return (
     <div className={styles.projects_wrap}>
-      <div className={styles.chose_categories}>
+      <div
+        className={styles.chose_categories}
+        style={
+          !cuted
+            ? {
+                marginLeft: "unset",
+                paddingInline: "20px",
+                flexDirection: "unset",
+                justifyContent: "space-between",
+                alignItems: "center",
+                maxWidth: "unset",
+              }
+            : { marginLeft: "auto", paddingInline: "150px" }
+        }
+      >
         {cuted && <span className={styles.title}>Browse all categories</span>}
         <ul className={styles.categories_picker}>
           {categories.map((item: CategoryType, i: number) => (
@@ -64,6 +77,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
             </li>
           ))}
         </ul>
+        {!cuted && <div>select</div>}
       </div>
       <ul ref={projectsRef} className={styles.items_by_categorie}>
         {showingImgs.map((item: projectDataType) => (
