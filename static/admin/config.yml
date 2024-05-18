@@ -1,5 +1,5 @@
 backend:
-  name: test-repo #git-gateway
+  name: git-gateway #test-repo
   branch: master
 
 media_folder: static/images/uploads
@@ -20,7 +20,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Category", name: "category", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Complete Date", name: "complete_date", widget: "datetime" }
       - {
           label: "Short description",
           name: "description",
