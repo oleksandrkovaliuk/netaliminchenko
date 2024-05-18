@@ -27,10 +27,12 @@ export const PreviewProjectImg: React.FC<ImgType> = ({ src, title, slug }) => {
       }
       className={styles.img_wrap}
     >
-      <img ref={imgRef} src={src} alt="preview_img" className={styles.img} />
-      <div className={styles.bottom_disc}>
-        <span>{title}</span>
-      </div>
+      <abbr title="check full project">
+        <img ref={imgRef} src={src} alt="preview_img" className={styles.img} />
+        <div className={styles.bottom_disc}>
+          <span>{title}</span>
+        </div>
+      </abbr>
     </motion.button>
   );
 };

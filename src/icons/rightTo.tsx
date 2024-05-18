@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { FC } from "react";
 export const RightTo = () => {
   return (
     <svg

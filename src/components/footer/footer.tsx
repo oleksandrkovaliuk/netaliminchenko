@@ -6,13 +6,13 @@ import { useExtractAllProjects } from "../../hooks/posts";
 import { customerReviewTypes } from "../../types/dataTypes";
 export const Footer = () => {
   const projects = useExtractAllProjects();
-  const getBusinnesArea = new Set(
+  const getBusinnesArea: Set<string> = new Set(
     projects.map(
       (category: { frontmatter: customerReviewTypes }) =>
         category.frontmatter.category
     )
   );
-  const BusinessArea = [...getBusinnesArea];
+  const BusinessArea: string[] = [...getBusinnesArea];
 
   return (
     <div className={styles.footer_wrap}>
@@ -23,8 +23,8 @@ export const Footer = () => {
         </div>
         <ul className={styles.business_area}>
           <li>Business Area</li>
-          {BusinessArea.map((item) => (
-            <li key={item}>{item}</li>
+          {BusinessArea.map((item: string, i: number) => (
+            <li key={i}>{item}</li>
           ))}
         </ul>
       </div>

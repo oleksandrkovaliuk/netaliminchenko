@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import * as styles from "./readyToBook.module.scss";
 import { Share } from "../../icons/share";
 import { Telegram } from "../../icons/telegram";
+import { Link } from "gatsby";
 
 export const ReadyToBook = () => {
   return (
@@ -25,7 +26,9 @@ export const ReadyToBook = () => {
             </a>
           </div>
         </div>
-        <button className={styles.contant_form}>Fill contant form</button>
+        <Link to="/contact">
+          <button className={styles.contant_form}>Fill contant form</button>
+        </Link>
       </div>
     </div>
   );

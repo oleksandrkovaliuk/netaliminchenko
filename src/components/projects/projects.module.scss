@@ -46,16 +46,73 @@
         }
       }
     }
-    .project_sort {
-      background-color: var(--color-bg);
-      border: 1px solid var(--color-gray);
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 20px;
-      font-family: var(--font-SfThin);
-      color: var(--color-gray);
-      &:focus + &:active {
-        outline: none;
+    .sort_wrap {
+      position: relative;
+      max-width: 120px;
+      width: 100%;
+
+      .sort_button {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: 5px;
+        color: var(--color-white);
+        font-family: var(--font-SfMedium);
+        text-transform: capitalize;
+        font-size: 17px;
+        transition: all 0.3s ease-in-out;
+        .sort_svg {
+          width: 15px;
+          height: 15px;
+          &[data-menuisopen="true"] {
+            svg {
+              rotate: 270deg;
+            }
+          }
+          &[data-menuisopen="false"] {
+            svg {
+              rotate: 90deg;
+            }
+          }
+          svg {
+            width: 15px;
+            height: 15px;
+            transition: all 0.4s ease-in-out;
+            path {
+              fill: var(--color-white);
+            }
+          }
+        }
+      }
+      .option_list {
+        position: absolute;
+        padding: 5px;
+        background-color: var(--color-bg);
+        z-index: 6;
+        border: 1px solid var(--color-gray);
+        border-radius: 4px;
+        list-style: none;
+        opacity: 0;
+        .option {
+          &:not(:last-child) {
+            margin-bottom: 2px;
+          }
+          button {
+            padding-inline: 5px;
+            border-radius: 2px;
+            width: 100%;
+            color: var(--color-white);
+            font-family: var(--font-SfMedium);
+            text-transform: capitalize;
+            font-size: 17px;
+          }
+          &:hover {
+            button {
+              color: var(--color-bg) !important;
+              background-color: var(--color-white) !important;
+            }
+          }
+        }
       }
     }
   }
@@ -69,5 +126,11 @@
     list-style: none;
     transition: opacity 1.2s ease-in-out;
     z-index: 4;
+    .empty {
+      padding-top: 50px;
+      font-size: 20px;
+      color: var(--color-gray);
+      font-family: var(--font-SfMedium);
+    }
   }
 }

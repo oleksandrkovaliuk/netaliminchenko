@@ -29,6 +29,7 @@
     li {
       font-family: var(--font-SfThin);
       color: var(--color-white);
+      pointer-events: none;
       &:first-child {
         font-family: var(--font-SfMedium);
         font-size: 19px;

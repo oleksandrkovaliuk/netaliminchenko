@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import * as styles from "./firstSection.module.scss";
 import { Link } from "gatsby";
 import { Share } from "../../../icons/share";
@@ -9,14 +9,15 @@ export const FirstSection = () => {
         <img src="/avatar.png" alt="avat" />
         <div className={styles.about_summary}>
           <span>Photographer & Filmmaker</span>
-
-          <Link
-            className={styles.redirect_to_blog}
-            to="https://www.instagram.com/netaliminchenko/"
-          >
-            <h1>Nataliia Lypovenko</h1>
-            <Share />
-          </Link>
+          <abbr title="go to instagram">
+            <Link
+              className={styles.redirect_to_blog}
+              to="https://www.instagram.com/netaliminchenko/"
+            >
+              <h1>Nataliia Lypovenko</h1>
+              <Share />
+            </Link>
+          </abbr>
 
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere

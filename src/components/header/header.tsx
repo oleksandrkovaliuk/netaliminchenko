@@ -51,7 +51,7 @@ export const Header = () => {
           <Link to="/allProjects">Projects</Link>
         </li>
         <li>
-          <Link to="/contact">Contant me</Link>
+          <Link to="/contact">Contant</Link>
         </li>
         <li>
           <a href="https://t.me/mylife_ph">

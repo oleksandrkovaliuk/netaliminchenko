@@ -48,7 +48,7 @@ export const FifthSection = () => {
                         </span>
                       </a>
                       <Link to={item.fields.slug}>
-                        <span>Explore project</span>
+                        <span>Project</span>
                       </Link>
                     </div>
                   </div>
