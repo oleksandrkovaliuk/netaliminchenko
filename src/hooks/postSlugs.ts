@@ -16,7 +16,7 @@ export const usePostSlugs = () => {
             preview_img
             description
             category
-            complete_date(fromNow: true)
+            complete_date
           }
           fields {
             slug
