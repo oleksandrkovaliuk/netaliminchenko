@@ -20,7 +20,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Category", name: "category", widget: "string" }
-      - { label: "Complete Date", name: "complete_date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss.sssZ" }
+      - { label: "Complete Date", name: "complete_date", widget: "datetime", format: "YYYY-MM-DD" }
       - {
           label: "Short description",
           name: "description",
