@@ -7,7 +7,7 @@ import { Share } from "../../../icons/share";
 import { ReadyToBook } from "../../../components/readytoBook";
 import Slider from "react-slick";
 import "./slider.scss";
-import { useExtractAllProjects } from "../../../hooks/posts";
+import { useExtractAllProjects } from "../../../hooks/fullPost";
 import { customerReviewTypes } from "../../../types/dataTypes";
 import { Link } from "gatsby";
 export const FifthSection = () => {

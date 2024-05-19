@@ -2,17 +2,10 @@ import React from "react";
 import * as styles from "./footer.module.scss";
 import { Telegram } from "../../icons/telegram";
 import { Instagram } from "../../icons/instagram";
-import { useExtractAllProjects } from "../../hooks/posts";
-import { customerReviewTypes } from "../../types/dataTypes";
+import { getCategories } from "../../services/getCategory";
 export const Footer = () => {
-  const projects = useExtractAllProjects();
-  const getBusinnesArea: Set<string> = new Set(
-    projects.map(
-      (category: { frontmatter: customerReviewTypes }) =>
-        category.frontmatter.category
-    )
-  );
-  const BusinessArea: string[] = [...getBusinnesArea];
+  const projects: string[] = getCategories();
+  const BusinessArea: string[] = [...projects];
 
   return (
     <div className={styles.footer_wrap}>

@@ -7,7 +7,8 @@ import { usePostSlugs } from "../../hooks/postSlugs";
 import { Link } from "gatsby";
 import { useFilteredData } from "../../hooks/filteredContent";
 import { RightTo } from "../../icons/rightTo";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { getCategories } from "../../services/getCategory";
 type ProjectsProps = {
   cuted: boolean;
 };
@@ -19,8 +20,9 @@ type projectDataType = {
 type CategoryType = string;
 
 export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
-  const Data = usePostSlugs();
+  const projects: CategoryType[] = getCategories();
   const projectsRef = useRef(null);
+<<<<<<< Updated upstream
   const optionListRef = useRef<HTMLUListElement>(null);
   const optionList = optionListRef.current?.getBoundingClientRect() || {height: 0}
   const optionListStyle = optionList?.height + 7;
@@ -33,9 +35,14 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
     )
   );
 
+=======
+  const optionListRef = useRef(null);
+  const optionListStyle =
+    optionListRef.current?.getBoundingClientRect().height + 7;
+>>>>>>> Stashed changes
   const [activeCategories, setActiveCategories] = useState<
     CategoryType | string
-  >(categories[0]);
+  >(projects[0]);
   const [sortBy, setSortBy] = useState("");
   const [sortMenuIsOpen, setSortMenuIsOpen] = useState(false);
   const filteredData = useFilteredData({
@@ -76,7 +83,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
       >
         {cuted && <span className={styles.title}>Browse all categories</span>}
         <ul className={styles.categories_picker}>
-          {categories.map((item: CategoryType, i: number) => (
+          {projects.map((item: CategoryType, i: number) => (
             <li key={i} data-picked={activeCategories === item}>
               <button onClick={() => handleFilteringThroughCategory(item)}>
                 {item}

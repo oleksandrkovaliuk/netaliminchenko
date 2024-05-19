@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
 @font-face {
   font-family: sf-medium;
   src: url(../../static/fonts/sf-compact-display-medium-5864711817c30.woff);
@@ -19,6 +20,15 @@
 button {
   background-color: unset;
   border: none;
+}
+.toaster {
+  background-color: var(--color-bg);
+  padding: 5px 10px;
+  div {
+    &:nth-child(1) {
+      color: var(--color-white);
+    }
+  }
 }
 body {
   background-color: var(--color-bg);
