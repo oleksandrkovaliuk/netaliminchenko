@@ -56,14 +56,14 @@ export const ContactOrBookTemplate = () => {
         strict: true,
       });
 
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: {
-          "form-name": "contact",
-          ...formValues,
-        },
-      });
+      // fetch("/", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      //   body: {
+      //     "form-name": "contact",
+      //     ...formValues,
+      //   },
+      // });
 
       navigate("/");
       toast.message(`Thank you ${e.target[0].value} 🖤`, {
@@ -147,6 +147,7 @@ export const ContactOrBookTemplate = () => {
           className={styles.form}
           onSubmit={handleFormValidation}
           data-netlify-honeypot="bot-field"
+          method="POST"
         >
           <span className={styles.form_title}>
             {contactCheck ? "Contact" : "Book"}
@@ -160,7 +161,7 @@ export const ContactOrBookTemplate = () => {
               placeholder=" "
               type="text"
               id="customerName"
-              name="customerName"
+              name="name"
               autoComplete="off"
               className={styles.form_input}
               style={
@@ -178,7 +179,7 @@ export const ContactOrBookTemplate = () => {
               placeholder=" "
               type="email"
               id="customerEmail"
-              name="customerEmail"
+              name="email"
               autoComplete="off"
               className={styles.form_input}
               style={
