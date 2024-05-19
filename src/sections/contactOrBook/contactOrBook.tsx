@@ -117,14 +117,14 @@ export const ContactOrBookTemplate = () => {
           <img src="/withCamera.png" alt="netali_photo" />
         </div>
         <form
-          name="contact"
+          name="contact_me"
           data-netlify="true"
           className={styles.form}
           onSubmit={handleFormValidation}
           data-netlify-honeypot="bot-field"
           method="POST"
         >
-          <input type="hidden" name="contact" value="contact" />
+          <input type="hidden" name="contact_me" value="contact_me" />
           <p hidden>
             <label>
               Don’t fill this out: <input name="bot-field" />
