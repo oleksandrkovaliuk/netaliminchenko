@@ -17,12 +17,9 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
-<<<<<<< Updated upstream
     "@types/react-slick": "^0.23.13",
-=======
     "clsx": "^2.1.1",
     "css": "^3.0.0",
->>>>>>> Stashed changes
     "framer-motion": "^11.1.9",
     "gatsby": "^5.13.4",
     "gatsby-image": "^3.11.0",

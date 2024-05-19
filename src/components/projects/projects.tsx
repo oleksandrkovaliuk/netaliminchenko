@@ -17,32 +17,14 @@ type projectDataType = {
   frontmatter: ProjectsType;
   fields: { slug: string };
 };
-type CategoryType = string;
 
 export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
-  const projects: CategoryType[] = getCategories();
+  const projects: string[] = getCategories();
   const projectsRef = useRef(null);
-<<<<<<< Updated upstream
   const optionListRef = useRef<HTMLUListElement>(null);
   const optionList = optionListRef.current?.getBoundingClientRect() || {height: 0}
   const optionListStyle = optionList?.height + 7;
-  const projectsData: projectDataType[] = Data.map(
-    (item: projectDataType) => item
-  );
-  const categories: CategoryType[] = Array.from(
-    new Set(
-      projectsData.map((proj: projectDataType) => proj.frontmatter.category)
-    )
-  );
-
-=======
-  const optionListRef = useRef(null);
-  const optionListStyle =
-    optionListRef.current?.getBoundingClientRect().height + 7;
->>>>>>> Stashed changes
-  const [activeCategories, setActiveCategories] = useState<
-    CategoryType | string
-  >(projects[0]);
+  const [activeCategories, setActiveCategories] = useState<string>(projects[0]);
   const [sortBy, setSortBy] = useState("");
   const [sortMenuIsOpen, setSortMenuIsOpen] = useState(false);
   const filteredData = useFilteredData({
@@ -83,8 +65,8 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
       >
         {cuted && <span className={styles.title}>Browse all categories</span>}
         <ul className={styles.categories_picker}>
-          {projects.map((item: CategoryType, i: number) => (
-            <li key={i} data-picked={activeCategories === item}>
+          {projects.map((item: string) => (
+            <li key={item} data-picked={activeCategories === item}>
               <button onClick={() => handleFilteringThroughCategory(item)}>
                 {item}
               </button>
