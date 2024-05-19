@@ -6,7 +6,13 @@ import { navigate } from "gatsby";
 import { toast } from "sonner";
 import { getCategories } from "../../services/getCategory";
 import { RightTo } from "../../icons/rightTo";
-import autoAnimate from "@formkit/auto-animate";
+
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 export const ContactOrBookTemplate = () => {
   const projects: string[] = getCategories();
 
@@ -41,14 +47,24 @@ export const ContactOrBookTemplate = () => {
     e.preventDefault();
 
     try {
-      const formValue = {
+      const formValues = {
         name: e.target[0].value,
         email: e.target[1].value,
         details: e.target[2].value,
       };
-      await formSchema.validate(formValue, {
+      await formSchema.validate(formValues, {
         strict: true,
       });
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formValues,
+        }),
+      });
+
       navigate("/");
       toast.message(`Thank you ${e.target[0].value} 🖤`, {
         description: contactCheck
@@ -125,7 +141,13 @@ export const ContactOrBookTemplate = () => {
         <div className={styles.left_img}>
           <img src="/withCamera.png" alt="netali_photo" />
         </div>
-        <form className={styles.form} onSubmit={handleFormValidation}>
+        <form
+          name="contact"
+          data-netlify="true"
+          className={styles.form}
+          onSubmit={handleFormValidation}
+          data-netlify-honeypot="bot-field"
+        >
           <span className={styles.form_title}>
             {contactCheck ? "Contact" : "Book"}
           </span>
