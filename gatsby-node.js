@@ -1,7 +1,7 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-const postTemplate = path.resolve("./src/templates/PostTemplate.tsx");
+const projectTemplate = path.resolve("./src/templates/ProjectTemplate.tsx");
 const pageTemplate = path.resolve("./src/templates/PageTemplate.tsx");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -10,7 +10,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const slug = createFilePath({ node, getNode });
     const fileNode = getNode(node.parent);
     const source = fileNode.sourceInstanceName;
-    console.log(source, slug, "source-slug");
     createNodeField({
       node,
       name: "slug",
@@ -76,17 +75,17 @@ exports.createPages = ({ graphql, actions }) => {
 
         const items = result.data.allMarkdownRemark.edges;
 
-        // Create posts
-        const posts = items.filter(
+        // Create projects
+        const projects = items.filter(
           (item) => item.node.fields.source === "projects"
         );
-        posts.forEach(({ node }) => {
+        projects.forEach(({ node }) => {
           const slug = node.fields.slug;
           const source = node.fields.source;
 
           createPage({
             path: slug,
-            component: postTemplate,
+            component: projectTemplate,
             context: {
               slug,
               source,

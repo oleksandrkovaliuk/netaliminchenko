@@ -11,7 +11,7 @@ type PostTemplateProps = {
     page: { frontmatter: ProjectsType };
   };
 };
-const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
+const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
   const { frontmatter } = data.page;
   const videoRef = useRef(null);
   const h1Ref = useRef(null);
@@ -120,7 +120,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
   );
 };
 
-export default PostTemplate;
+export default ProjectTemplate;
 
 export const pageQuery = graphql`
   query PageByPath($slug: String!) {

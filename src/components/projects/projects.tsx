@@ -21,9 +21,9 @@ type CategoryType = string;
 export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
   const Data = usePostSlugs();
   const projectsRef = useRef(null);
-  const optionListRef = useRef(null);
-  const optionListStyle =
-    optionListRef.current?.getBoundingClientRect().height + 7;
+  const optionListRef = useRef<HTMLUListElement>(null);
+  const optionList = optionListRef.current?.getBoundingClientRect() || {height: 0}
+  const optionListStyle = optionList?.height + 7;
   const projectsData: projectDataType[] = Data.map(
     (item: projectDataType) => item
   );
