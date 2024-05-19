@@ -6,13 +6,13 @@ import { navigate } from "gatsby";
 import { toast } from "sonner";
 import { getCategories } from "../../services/getCategory";
 import { RightTo } from "../../icons/rightTo";
+import { object } from "yup";
 
-const encode = (data) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+type formDataType = {
+  name: string;
+  email: string;
+  details: string;
 };
-
 export const ContactOrBookTemplate = () => {
   const projects: string[] = getCategories();
 
@@ -47,7 +47,7 @@ export const ContactOrBookTemplate = () => {
     e.preventDefault();
 
     try {
-      const formValues = {
+      const formValues: formDataType = {
         name: e.target[0].value,
         email: e.target[1].value,
         details: e.target[2].value,
@@ -55,17 +55,14 @@ export const ContactOrBookTemplate = () => {
       await formSchema.validate(formValues, {
         strict: true,
       });
+      const formData = new FormData(formValues);
 
-      // fetch("/", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      //   body: {
-      //     "form-name": "contact",
-      //     ...formValues,
-      //   },
-      // });
-
-      navigate("/");
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      // navigate("/");
       toast.message(`Thank you ${e.target[0].value} 🖤`, {
         description: contactCheck
           ? `Your form has been submiten at ${formatDate(new Date())}`
