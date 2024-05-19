@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useState } from "react";
+import React, { Fragment } from "react";
 import { PageProps } from "gatsby";
 import "./main.scss";
 import { Header } from "../components/header";
@@ -9,7 +9,7 @@ const Layout: React.FC<PageProps> = ({ children }) => {
   return (
     <Fragment>
       <Toaster
-        position={window?.innerWidth < 768 ? "top-center" : "bottom-right"}
+        position={"bottom-right"}
         toastOptions={{
           className: "toaster",
         }}
