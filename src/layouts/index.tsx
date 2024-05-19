@@ -9,7 +9,7 @@ const Layout: React.FC<PageProps> = ({ children }) => {
   return (
     <Fragment>
       <Toaster
-        position={window.innerWidth < 768 ? "top-center" : "bottom-right"}
+        position={window?.innerWidth < 768 ? "top-center" : "bottom-right"}
         toastOptions={{
           className: "toaster",
         }}
