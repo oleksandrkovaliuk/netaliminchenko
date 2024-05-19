@@ -28,9 +28,9 @@ export const ContactOrBookTemplate = () => {
 
     try {
       const formValues = {
-        name: e.target[0].value,
-        email: e.target[1].value,
-        details: e.target[2].value,
+        name: e.target[2].value,
+        email: e.target[3].value,
+        details: e.target[4].value,
       };
       await formSchema.validate(formValues, {
         strict: true,
