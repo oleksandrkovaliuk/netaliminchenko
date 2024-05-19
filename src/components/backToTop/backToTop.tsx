@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as styles from "./backToTheTop.module.scss";
 import { Top } from "../../icons/top";
 export const BackToTopBtn = () => {

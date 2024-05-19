@@ -7,46 +7,46 @@
     color: var(--color-white);
     margin-bottom: 20px;
   }
-  .formtype_picker {
-    display: flex;
-    justify-content: center;
-    border: 1px solid var(--color-white);
-    border-radius: 10px;
-    max-width: 240px;
-    margin: auto;
-    position: relative;
-    margin-bottom: 100px;
-    overflow: hidden;
-    .switcher {
-      position: absolute;
-      width: 120px;
-      height: 100%;
-      top: 0;
-      left: -1px;
-      background-color: var(--color-white);
-      border-radius: 8px;
-    }
-    .checker {
-      position: relative;
-      .checkbox {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        cursor: pointer;
-      }
-      .check_label {
-        display: flex;
-        justify-content: center;
-        padding: 5px;
-        width: 120px;
-        font-size: 20px;
-        font-family: var(--font-SfMedium);
-        color: var(--color-white);
-        border-radius: 10px;
-        transition: color 0.6s ease-in-out;
-      }
-    }
-  }
+  // .formtype_picker {
+  //   display: flex;
+  //   justify-content: center;
+  //   border: 1px solid var(--color-white);
+  //   border-radius: 10px;
+  //   max-width: 240px;
+  //   margin: auto;
+  //   position: relative;
+  //   margin-bottom: 100px;
+  //   overflow: hidden;
+  //   .switcher {
+  //     position: absolute;
+  //     width: 120px;
+  //     height: 100%;
+  //     top: 0;
+  //     left: -1px;
+  //     background-color: var(--color-white);
+  //     border-radius: 8px;
+  //   }
+  //   .checker {
+  //     position: relative;
+  //     .checkbox {
+  //       position: absolute;
+  //       inset: 0;
+  //       opacity: 0;
+  //       cursor: pointer;
+  //     }
+  //     .check_label {
+  //       display: flex;
+  //       justify-content: center;
+  //       padding: 5px;
+  //       width: 120px;
+  //       font-size: 20px;
+  //       font-family: var(--font-SfMedium);
+  //       color: var(--color-white);
+  //       border-radius: 10px;
+  //       transition: color 0.6s ease-in-out;
+  //     }
+  //   }
+  // }
   .form_block {
     display: flex;
     gap: 40px;
@@ -181,59 +181,59 @@
     }
   }
 }
-.select_field_wrap {
-  position: relative;
-  margin-bottom: 30px;
-  max-width: 200px;
-  .blur {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-  }
-  .select_label {
-    position: absolute;
-    left: 5px;
-    top: -9px;
-    font-size: 14px;
-    padding-inline: 2px;
-    color: var(--color-white);
-    background-color: var(--color-bg);
-    font-family: var(--font-SfThin);
-    pointer-events: none;
-  }
-  .select_arrow {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    right: 10px;
-    top: 11px;
-    rotate: 90deg;
-    pointer-events: none;
-    svg {
-      width: 15px;
-      height: 15px;
-      transition: all 0.4s ease-in-out;
-      path {
-        fill: var(--color-white);
-      }
-    }
-  }
-  select {
-    font-size: 18px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-    overflow: hidden;
-    &:active {
-      border-bottom-color: transparent;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-      outline: none;
-      transition: all 0.1s ease-in-out !important;
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-}
+// .select_field_wrap {
+//   position: relative;
+//   margin-bottom: 30px;
+//   max-width: 200px;
+//   .blur {
+//     position: fixed;
+//     inset: 0;
+//     z-index: 1;
+//   }
+//   .select_label {
+//     position: absolute;
+//     left: 5px;
+//     top: -9px;
+//     font-size: 14px;
+//     padding-inline: 2px;
+//     color: var(--color-white);
+//     background-color: var(--color-bg);
+//     font-family: var(--font-SfThin);
+//     pointer-events: none;
+//   }
+//   .select_arrow {
+//     width: 15px;
+//     height: 15px;
+//     position: absolute;
+//     right: 10px;
+//     top: 11px;
+//     rotate: 90deg;
+//     pointer-events: none;
+//     svg {
+//       width: 15px;
+//       height: 15px;
+//       transition: all 0.4s ease-in-out;
+//       path {
+//         fill: var(--color-white);
+//       }
+//     }
+//   }
+//   select {
+//     font-size: 18px;
+//     appearance: none;
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     position: relative;
+//     overflow: hidden;
+//     &:active {
+//       border-bottom-color: transparent;
+//       border-bottom-left-radius: 0px;
+//       border-bottom-right-radius: 0px;
+//       outline: none;
+//       transition: all 0.1s ease-in-out !important;
+//     }
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+// }

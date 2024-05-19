@@ -59,10 +59,10 @@ export const ContactOrBookTemplate = () => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
+        body: {
           "form-name": "contact",
           ...formValues,
-        }),
+        },
       });
 
       navigate("/");
@@ -86,7 +86,7 @@ export const ContactOrBookTemplate = () => {
   return (
     <div className={styles.contact_or_book_wrap}>
       <h1 className={styles.title}>Let’s do this!</h1>
-      <div className={styles.formtype_picker}>
+      {/* <div className={styles.formtype_picker}>
         <motion.span
           className={styles.switcher}
           animate={
@@ -136,7 +136,7 @@ export const ContactOrBookTemplate = () => {
             Book now
           </label>
         </div>
-      </div>
+      </div> */}
       <div className={styles.form_block}>
         <div className={styles.left_img}>
           <img src="/withCamera.png" alt="netali_photo" />
@@ -192,7 +192,7 @@ export const ContactOrBookTemplate = () => {
             </label>
           </div>
 
-          {!contactCheck && (
+          {/* {!contactCheck && (
             <Fragment>
               <motion.div
                 animate={
@@ -337,7 +337,7 @@ export const ContactOrBookTemplate = () => {
                 </label>
               </motion.div>
             </Fragment>
-          )}
+          )} */}
           <div className={styles.form_field_wrap}>
             <textarea
               placeholder=" "
