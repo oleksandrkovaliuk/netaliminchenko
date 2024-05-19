@@ -124,7 +124,7 @@ export const ContactOrBookTemplate = () => {
           data-netlify-honeypot="bot-field"
           method="POST"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="contact" value="contact" />
           <p hidden>
             <label>
               Don’t fill this out: <input name="bot-field" />
