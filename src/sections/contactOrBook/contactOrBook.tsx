@@ -36,18 +36,20 @@ export const ContactOrBookTemplate = () => {
         strict: true,
       });
       const formData = new FormData(e?.target);
+      console.log(formData, "formdata");
 
-      fetch("/", {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       });
       // navigate("/");
-      toast.message(`Thank you ${e.target[0].value} 🖤`, {
+      toast.message(`Thank you ${e.target[2].value} 🖤`, {
         description: `Your form has been submiten at ${formatDate(new Date())}`,
       });
       setIsValid(true);
     } catch (error) {
+      console.log(error, "cehck eroror");
       setIsValid(false);
       setValidationError((prevState) => ({
         ...prevState,
