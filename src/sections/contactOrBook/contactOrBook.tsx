@@ -1,37 +1,17 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import * as styles from "./contactOrBook.module.scss";
 import { motion } from "framer-motion";
 import { formSchema } from "../../validation/formValidation";
 import { navigate } from "gatsby";
 import { toast } from "sonner";
-import { getCategories } from "../../services/getCategory";
-import { RightTo } from "../../icons/rightTo";
-import { object } from "yup";
-
-type formDataType = {
-  name: string;
-  email: string;
-  details: string;
-};
 export const ContactOrBookTemplate = () => {
-  const projects: string[] = getCategories();
-
-  const [contactCheck, setContactCheck] = useState(true);
-  const [bookCheck, setBookCheck] = useState(false);
   const [validationError, setValidationError] = useState({
     email: false,
     name: false,
     details: false,
     message: " ",
   });
-  const [chosenCategory, setChosenCategory] = useState(projects[0]);
-  const [isOther, setIsOther] = useState("");
   const [isValid, setIsValid] = useState(false);
-
-  const handleCheckBoxCheck = () => {
-    setContactCheck(!contactCheck);
-    setBookCheck(!bookCheck);
-  };
   const handleFormValidation = async (e: React.FormEvent<HTMLFormElement>) => {
     const formatDate = (date: Date) => {
       return date
@@ -47,7 +27,7 @@ export const ContactOrBookTemplate = () => {
     e.preventDefault();
 
     try {
-      const formValues: formDataType = {
+      const formValues = {
         name: e.target[0].value,
         email: e.target[1].value,
         details: e.target[2].value,
@@ -55,7 +35,7 @@ export const ContactOrBookTemplate = () => {
       await formSchema.validate(formValues, {
         strict: true,
       });
-      const formData = new FormData(formValues);
+      const formData = new FormData(e?.target);
 
       fetch("/", {
         method: "POST",
@@ -64,9 +44,7 @@ export const ContactOrBookTemplate = () => {
       });
       // navigate("/");
       toast.message(`Thank you ${e.target[0].value} 🖤`, {
-        description: contactCheck
-          ? `Your form has been submiten at ${formatDate(new Date())}`
-          : `Your booking has been submited ill reach you out shortly to confirm!`,
+        description: `Your form has been submiten at ${formatDate(new Date())}`,
       });
       setIsValid(true);
     } catch (error) {
@@ -146,9 +124,7 @@ export const ContactOrBookTemplate = () => {
           data-netlify-honeypot="bot-field"
           method="POST"
         >
-          <span className={styles.form_title}>
-            {contactCheck ? "Contact" : "Book"}
-          </span>
+          <span className={styles.form_title}>Contact</span>
           <p className={styles.note}>
             Note: Fill the form and once you submit her ill contact with you
             shortly. Thank for your trust.
@@ -358,7 +334,7 @@ export const ContactOrBookTemplate = () => {
             type="submit"
             className={styles.submit_form}
           >
-            Submit {contactCheck ? "contant" : "book"} form
+            Submit contant form
           </motion.button>
           {!isValid && (
             <span className={styles.error} style={{ color: "red" }}>
