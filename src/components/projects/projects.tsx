@@ -56,15 +56,16 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
           !cuted
             ? {
                 marginLeft: "unset",
-                paddingInline: "20px",
-                flexDirection: "unset",
+                paddingInline: window?.innerWidth < 580 ? "column" : "20px",
+                flexDirection: window?.innerWidth < 580 ? "column" : "unset",
                 justifyContent: "space-between",
-                alignItems: "flex-end",
+                alignItems:
+                  window?.innerWidth < 580 ? "flex-start" : "flex-end",
                 maxWidth: "unset",
               }
             : {
                 marginLeft: "auto",
-                paddingInline: "150px",
+                paddingInline: window?.innerWidth < 1080 ? "unset" : "150px",
               }
         }
       >
