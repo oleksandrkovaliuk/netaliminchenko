@@ -27,6 +27,7 @@
     max-width: 800px;
     margin: auto;
     margin-bottom: 100px;
+    padding-inline: 20px;
     h1 {
       font-size: 36px;
       color: var(--color-white);
@@ -160,6 +161,31 @@
           }
         }
       }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .project_page_wrap {
+    .imgs_wrap {
+      padding-inline: unset;
+      .all_imgs {
+        gap: 40px;
+      }
+    }
+    .project_info {
+      margin-bottom: 50px;
+      h1 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 17px;
+      }
+    }
+    .customer_review {
+      padding-inline: 20px;
+      flex-direction: column;
+      gap:10px;
+      align-items: center;
     }
   }
 }

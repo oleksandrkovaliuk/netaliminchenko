@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { graphql } from "gatsby";
 import { ReadyToBook } from "../components/readytoBook";
 import { useInView, motion, useScroll, useTransform } from "framer-motion";
-import * as styles from "./postTemplate.module.scss";
+import * as styles from "./ProjectTemplate.module.scss";
 import { Instagram } from "../icons/instagram";
 import { Share } from "../icons/share";
 import { ProjectsType } from "../types/dataTypes";
