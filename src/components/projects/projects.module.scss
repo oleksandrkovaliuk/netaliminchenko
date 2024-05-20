@@ -134,6 +134,13 @@
     }
   }
 }
+@media (max-width: 1080px) {
+  .projects_wrap {
+    .chose_categories {
+      padding-inline: unset !important;
+    }
+  }
+}
 @media (max-width: 768px) {
   .projects_wrap {
     .items_by_categorie {
@@ -156,6 +163,8 @@
 @media (max-width: 580px) {
   .projects_wrap {
     .chose_categories {
+      flex-direction: column !important;
+      align-items: flex-start !important;
       .sort_wrap {
         .sort_button {
           margin-left: unset;
