@@ -74,3 +74,28 @@
     }
   }
 }
+@media (max-width: 1280px) {
+  .about_wrap {
+    padding-inline: 50px;
+  }
+}
+@media (max-width: 1080px) {
+  .about_wrap {
+    .text_content {
+      h1 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 17px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .about_wrap {
+    padding-inline: 20px;
+    .about_content {
+      flex-direction: column;
+    }
+  }
+}

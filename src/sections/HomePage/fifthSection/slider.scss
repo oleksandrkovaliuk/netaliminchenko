@@ -49,3 +49,8 @@
     }
   }
 }
+@media (max-width: 1400px) {
+  .slick-slider.slick-initialized .slick-track {
+    gap: unset;
+  }
+}

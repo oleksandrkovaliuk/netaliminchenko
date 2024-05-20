@@ -4,7 +4,7 @@
     height: 80dvh;
     width: 100%;
     background-color: var(--color-bg);
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
     &::before,
     &::after {
@@ -15,7 +15,7 @@
     }
     &::before {
       height: 40%;
-      top: 0;
+      top: -1px;
       background: linear-gradient(
         to bottom,
         rgba(5, 5, 5, 1),
@@ -24,7 +24,7 @@
     }
     &::after {
       height: 50%;
-      bottom: 0;
+      bottom: -1px;
       background: linear-gradient(to top, rgba(5, 5, 5, 1), rgba(5, 5, 5, 0));
     }
   }

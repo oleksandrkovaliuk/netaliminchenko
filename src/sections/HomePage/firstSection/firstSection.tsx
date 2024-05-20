@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import * as styles from "./firstSection.module.scss";
 import { Link } from "gatsby";
 import { Share } from "../../../icons/share";

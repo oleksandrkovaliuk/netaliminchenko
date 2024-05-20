@@ -44,18 +44,30 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
         animate={
           !isCardEven
             ? {
-                x: cardInView ? "120%" : "12%",
+                x: cardInView
+                  ? window?.innerWidth < 768
+                    ? window?.innerWidth < 630
+                      ? "150%"
+                      : "75%"
+                    : " 120%"
+                  : "12%",
               }
             : {
-                x: cardInView ? "-120%" : "-10%",
+                x: cardInView
+                  ? window?.innerWidth < 768
+                    ? window?.innerWidth < 630
+                      ? "-150%"
+                      : "-75%"
+                    : "-120%"
+                  : "-10%",
               }
         }
         transition={{ type: "spring", duration: 0.3, stiffness: 50 }}
         className={styles.right_disc}
         style={
           cardInView
-            ? { maxWidth: "400px", transition: "max-width 0s ease-in-out" }
-            : { maxWidth: "300px", transition: "max-width 0.8s ease-in-out" }
+            ? { maxWidth: "350px", transition: "max-width 0s ease-in-out" }
+            : { maxWidth: "200px", transition: "max-width 0.8s ease-in-out" }
         }
       >
         <h1>{title}</h1>

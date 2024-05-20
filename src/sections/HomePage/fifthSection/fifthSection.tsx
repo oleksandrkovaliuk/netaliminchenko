@@ -13,15 +13,34 @@ import { Link } from "gatsby";
 export const FifthSection = () => {
   const Data = useExtractAllProjects();
   const settings = {
+    focusOnSelect: true,
     dots: true,
     arrows: false,
-    centerMode: true,
     swipe: false,
-    infinite: false,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
     customPaging: () => <span className="dot"></span>,
+    centerMode: true,
+    infinite: true,
+    // centerPadding: "60px",
+    slidesToShow: 3,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 6000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1080,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+        },
+      }, {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className={styles.fifth_wrap}>
@@ -39,7 +58,7 @@ export const FifthSection = () => {
                   className={styles.kind_words_wrap}
                 >
                   <div className={styles.review_text}>
-                    <p>"{item.frontmatter.customerReview.customerFeedBack}""</p>
+                    <p>"{item.frontmatter.customerReview.customerFeedBack}"</p>
                     <div className={styles.customer}>
                       <a href={item.frontmatter.customerReview.link}>
                         <span>

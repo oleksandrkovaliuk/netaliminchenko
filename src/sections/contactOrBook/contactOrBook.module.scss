@@ -241,3 +241,20 @@
 //     }
 //   }
 // }
+@media (max-width: 1080px) {
+  .contact_or_book_wrap {
+    padding-inline: 20px;
+  }
+}
+@media(max-width:686px){
+  .contact_or_book_wrap{
+    .form_block{
+      flex-direction: column;
+      .left_img{
+        img{
+          border-radius: 18px;
+        }
+      }
+    }
+  }
+}

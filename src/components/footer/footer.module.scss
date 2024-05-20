@@ -115,3 +115,18 @@
     }
   }
 }
+@media (max-width: 1080px) {
+  .footer_wrap {
+    padding: 100px 20px 20px;
+  }
+}
+@media (max-width: 768px) {
+  .logo_n_businessArea {
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding-bottom: 20px;
+    .business_area {
+      text-align: left;
+    }
+  }
+}

@@ -22,7 +22,9 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
   const projects: string[] = getCategories();
   const projectsRef = useRef(null);
   const optionListRef = useRef<HTMLUListElement>(null);
-  const optionList = optionListRef.current?.getBoundingClientRect() || {height: 0}
+  const optionList = optionListRef.current?.getBoundingClientRect() || {
+    height: 0,
+  };
   const optionListStyle = optionList?.height + 7;
   const [activeCategories, setActiveCategories] = useState<string>(projects[0]);
   const [sortBy, setSortBy] = useState("");
@@ -54,13 +56,17 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
           !cuted
             ? {
                 marginLeft: "unset",
-                paddingInline: "20px",
-                flexDirection: "unset",
+                paddingInline: window?.innerWidth < 580 ? "unset" : "20px",
+                flexDirection: window?.innerWidth < 580 ? "column" : "unset",
                 justifyContent: "space-between",
-                alignItems: "flex-end",
+                alignItems:
+                  window?.innerWidth < 580 ? "flex-start" : "flex-end",
                 maxWidth: "unset",
               }
-            : { marginLeft: "auto", paddingInline: "150px" }
+            : {
+                marginLeft: "auto",
+                paddingInline: window?.innerWidth < 1080 ? "unset" : "150px",
+              }
         }
       >
         {cuted && <span className={styles.title}>Browse all categories</span>}

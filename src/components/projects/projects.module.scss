@@ -134,3 +134,49 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .projects_wrap {
+    .items_by_categorie {
+      gap: 50px;
+    }
+    .chose_categories {
+      .title {
+        font-size: 17px;
+      }
+      .categories_picker {
+        li {
+          button {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 580px) {
+  .projects_wrap {
+    .chose_categories {
+      .sort_wrap {
+        .sort_button {
+          margin-left: unset;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .projects_wrap {
+    .chose_categories {
+      .title {
+        font-size: 15px;
+      }
+      .categories_picker {
+        li {
+          button {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}

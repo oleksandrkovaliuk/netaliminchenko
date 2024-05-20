@@ -121,6 +121,13 @@
 }
 @media (max-width: 768px) {
   .project_card {
+    &:nth-child(even) {
+      .img_block {
+        .explore_btn {
+          right: 5px;
+        }
+      }
+    }
     .img_block {
       img {
         max-width: 250px;
@@ -130,7 +137,47 @@
         padding: 5px 10px;
         bottom: 5px;
         left: 5px;
+      }
+    }
+  }
+}
+@media (max-width: 625px) {
+  .project_card {
+    .right_disc {
+      h1 {
+        font-size: 15px;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .project_card {
+    &:not(:last-child) {
+      margin-bottom: 70px;
+    }
+    .right_disc {
+      display: none;
+    }
+    &:nth-child(even) {
+      .img_block {
+        .explore_btn {
+          right: 5px;
+          left: 5px;
+        }
+      }
+    }
+    .img_block {
+      img {
+        max-width: unset;
+      }
+      .explore_btn {
+        padding: 10px 20px;
         right: 5px;
+        left: 5px;
       }
     }
   }
