@@ -1,10 +1,9 @@
 .second_wrap {
   padding-block: 100px;
   .container {
-    height: 80dvh;
+    height: 120dvh;
     width: 100%;
     background-color: var(--color-bg);
-    // overflow: hidden;
     position: relative;
     &::before,
     &::after {

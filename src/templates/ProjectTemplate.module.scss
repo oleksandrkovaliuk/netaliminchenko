@@ -166,6 +166,7 @@
 }
 @media (max-width: 768px) {
   .project_page_wrap {
+    padding-top: unset;
     .imgs_wrap {
       padding-inline: unset;
       .all_imgs {
@@ -184,7 +185,7 @@
     .customer_review {
       padding-inline: 20px;
       flex-direction: column;
-      gap:10px;
+      gap: 10px;
       align-items: center;
     }
   }

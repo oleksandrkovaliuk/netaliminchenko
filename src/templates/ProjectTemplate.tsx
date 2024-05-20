@@ -19,7 +19,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
   const reviewBlockRef = useRef(null);
 
   const feedbackBlockInView = useInView(reviewBlockRef, {
-    amount: "all",
+    amount: "some",
     once: true,
   });
 
@@ -29,7 +29,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
   });
 
   const pInView = useInView(pRef, {
-    amount: "all",
+    amount: "some",
     once: true,
   });
 
