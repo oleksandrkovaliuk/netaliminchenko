@@ -64,7 +64,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
               }
             : {
                 marginLeft: "auto",
-                paddingInline: window?.innerWidth < 1080 ? "unset" : "150px",
+                paddingInline: "150px",
               }
         }
       >
