@@ -33,7 +33,11 @@ export const Header = () => {
       style={{
         top: headerOnTop ? "0px" : appearHeader ? "10px" : "-100px",
         borderRadius: !headerOnTop ? "8px" : "0px",
-        maxWidth: headerOnTop ? "" : "600px",
+        maxWidth: headerOnTop
+          ? ""
+          : window?.innerWidth < 600
+          ? "350px"
+          : "600px",
         margin: "auto",
       }}
       className={style.header_wrap}
@@ -45,7 +49,7 @@ export const Header = () => {
       </abbr>
       <ul className={style.nav}>
         <li>
-          <Link to="/about">About Me</Link>
+          <Link to="/aboutMePage">About Me</Link>
         </li>
         <li>
           <Link to="/allProjects">Projects</Link>

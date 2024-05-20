@@ -5,6 +5,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { BackToTopBtn } from "../components/backToTop";
 import { Toaster } from "sonner";
+import { motion } from "framer-motion";
 const Layout: React.FC<PageProps> = ({ children }) => {
   return (
     <Fragment>

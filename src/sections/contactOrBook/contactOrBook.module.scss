@@ -122,6 +122,10 @@
     font-family: var(--font-SfMedium);
     font-weight: unset;
     transition: all 0.3s ease-in-out;
+    &::selection {
+      color: var(--color-bg);
+      background-color: var(--color-white);
+    }
   }
   .form_label {
     position: absolute;

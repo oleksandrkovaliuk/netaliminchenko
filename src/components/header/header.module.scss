@@ -62,3 +62,15 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .header_wrap {
+    max-width: 360px;
+    padding-inline: 10px;
+  }
+  .logo {
+    font-size: 25px;
+  }
+  .nav {
+    gap: 8px;
+  }
+}

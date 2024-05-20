@@ -1,34 +1,49 @@
 .first_wrap {
-  padding: 100px 50px;
+  padding-inline: 50px;
+  height: 100dvh;
   .about {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    max-width: 900px;
+    position: relative;
     width: 100%;
+    height: 100%;
     margin: auto;
+    .about_content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .img {
+        margin: auto;
+        max-width: 400px;
+        max-height: 500px;
+        overflow: hidden;
 
-    img {
-      width: 400px;
-      height: 400px;
-      animation: changeBr 10s linear infinite;
-      box-shadow: 0px 1px 10px 0px rgba(128, 128, 128, 0.5);
-    }
+        &:hover {
+          img {
+            scale: 1.1;
+          }
+        }
+        img {
+          transition: all 0.4s ease-in-out;
+        }
+      }
 
-    .about_summary {
       span {
         font-size: 15px;
         color: var(--color-white);
         font-family: var(--font-SfThin);
+        position: absolute;
+        top: -4%;
       }
       .redirect_to_blog {
         text-decoration: unset;
         cursor: pointer;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 4px;
         margin-bottom: 5px;
-
+        position: absolute;
+        bottom: -6.1%;
+        right: 0;
         &:hover {
           h1 {
             color: var(--color-gray);
@@ -38,8 +53,8 @@
           }
         }
         svg {
-          width: 20px;
-          height: 20px;
+          width: 15px;
+          height: 15px;
           opacity: 0;
           transition: all 0.3s ease-in-out;
           path {
@@ -47,82 +62,45 @@
           }
         }
         h1 {
-          font-size: 46px;
+          font-size: 20px;
           color: var(--color-white);
           font-family: var(--font-SfMedium);
+          font-weight: unset;
 
           transition: all 0.3s ease-in-out;
         }
       }
       p {
-        font-size: 18px;
+        position: absolute;
+        bottom: 0;
+        font-size: 17px;
         color: var(--color-white);
-        font-family: var(--font-SfThin);
-        margin-bottom: 20px;
+        font-family: var(--font-SfMedium);
       }
-      .about_me {
-        display: inline-block;
-        padding: 5px 10px;
-        padding-inline: 0px;
-        background-color: transparent;
-        border: unset;
-        text-decoration: unset;
-        transition: all 0.4s ease-in-out;
-        transform: translateY(0px);
-        font-size: 18px;
-        font-family: var(--font-SfThin);
-        color: rgba(128, 128, 128, 0.7);
-        position: relative;
-        overflow: hidden;
+    }
+    .about_me {
+      display: inline-block;
+      padding: 5px 10px;
+      padding-inline: 0px;
+      background-color: transparent;
+      border: unset;
+      text-decoration: unset;
+      transition: all 0.4s ease-in-out;
+      font-size: 18px;
+      font-family: var(--font-SfThin);
+      color: rgba(128, 128, 128, 0.7);
+      position: absolute;
+      overflow: hidden;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      &:hover {
+        color: var(--color-white);
         &::before {
-          content: " ";
-          position: absolute;
-          bottom: 0;
-          height: 1px;
-          width: 20%;
-          transform-origin: -50% 100%;
-          background-color: var(--color-gray);
-          transition: all 0.4s ease-in-out;
-        }
-        &:hover {
-          color: var(--color-white);
-          &::before{
-            width: 100%;
-            background-color: var(--color-white);
-          }
+          width: 100%;
+          background-color: var(--color-white);
         }
       }
     }
-  }
-}
-@keyframes changeBr {
-  0% {
-    border-radius: 64% 75% 50% 70% / 58% 54% 57% 49%;
-  }
-  50% {
-    border-radius: 48% 75% 39% 84% / 61% 43% 57% 37%;
-  }
-  70% {
-    border-radius: 48% 94% 39% 84% / 61% 43% 57% 37%;
-  }
-  100% {
-    border-radius: 64% 75% 50% 70% / 58% 54% 57% 49%;
-  }
-}
-@keyframes borderAnimation {
-  0% {
-    transform: scale(0);
-    transform-origin: 0% 100%;
-  }
-  50% {
-    transform: scale(1);
-    transform-origin: 0% 100%;
-  }
-  75% {
-    transform-origin: 100% 0%;
-  }
-  100% {
-    transform: scale(0);
-    transform-origin: 100% 0%;
   }
 }

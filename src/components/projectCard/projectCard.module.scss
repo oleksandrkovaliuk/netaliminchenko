@@ -119,3 +119,19 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .project_card {
+    .img_block {
+      img {
+        max-width: 250px;
+        border-radius: 5px;
+      }
+      .explore_btn {
+        padding: 5px 10px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+      }
+    }
+  }
+}

@@ -30,6 +30,19 @@ button {
     }
   }
 }
+p::selection,
+h1::selection,
+span::selection,
+a::selection,
+label::selection {
+  color: var(--color-bg);
+  background-color: var(--color-white);
+}
+img::selection,
+li::selection,
+button::selection {
+  background-color: transparent;
+}
 body {
   background-color: var(--color-bg);
   &::-webkit-scrollbar {
@@ -47,7 +60,7 @@ body {
     background-color: var(--color-gray);
     border-radius: 2px;
   }
-  &.disable_scroll {
+  &.disable-scroll-page {
     overflow: hidden;
   }
 }

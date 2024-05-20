@@ -4,13 +4,20 @@ import { motion } from "framer-motion";
 import { formSchema } from "../../validation/formValidation";
 import { navigate } from "gatsby";
 import { toast } from "sonner";
-const encode = (data) => {
+const encode = (data: { [key: string]: string }) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
 };
+
+type ValidationType = {
+  email: boolean;
+  name: boolean;
+  details: boolean;
+  message: string;
+};
 export const ContactOrBookTemplate = () => {
-  const [validationError, setValidationError] = useState({
+  const [validationError, setValidationError] = useState<ValidationType>({
     email: false,
     name: false,
     details: false,
@@ -19,7 +26,7 @@ export const ContactOrBookTemplate = () => {
   const [isValid, setIsValid] = useState(false);
   const handleFormValidation = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
+    const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
     const formatDate = (date: Date) => {
@@ -35,10 +42,10 @@ export const ContactOrBookTemplate = () => {
     };
 
     try {
-      const formValues = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        details: formData.get("details"),
+      const formValues: { [key: string]: string } = {
+        name: formData.get("name")?.toString() || "",
+        email: formData.get("email")?.toString() || "",
+        details: formData.get("details")?.toString() || "",
       };
 
       await formSchema.validate(formValues, {
@@ -52,20 +59,19 @@ export const ContactOrBookTemplate = () => {
           ...formValues,
         }),
       });
-      // navigate("/");
-      toast.message(`Thank you ${e.target[2].value} 🖤`, {
+      navigate("/");
+      toast.message(`Thank you ${formData.get("name")} 🖤`, {
         description: `Your form has been submiten at ${formatDate(new Date())}`,
       });
       setIsValid(true);
     } catch (error) {
-      console.log(error, "cehck eroror");
       setIsValid(false);
       setValidationError((prevState) => ({
         ...prevState,
-        email: error.toString().includes("email") ? true : false,
-        name: error.toString().includes("name") ? true : false,
-        details: error.toString().includes("details") ? true : false,
-        message: error.toString().split(":").pop(),
+        email: error?.toString().includes("email") || false,
+        name: error?.toString().includes("name") || false,
+        details: error?.toString().includes("details") || false,
+        message: error?.toString().split(":").pop() || "",
       }));
     }
   };
@@ -127,15 +133,7 @@ export const ContactOrBookTemplate = () => {
         <div className={styles.left_img}>
           <img src="/withCamera.png" alt="netali_photo" />
         </div>
-        <form
-          // name="contact_me"
-          // data-netlify="true"
-          className={styles.form}
-          onSubmit={handleFormValidation}
-          // data-netlify-honeypot="bot-field"
-          // method="POST"
-        >
-          <input type="hidden" name="form-name" value="contact_me" />
+        <form className={styles.form} onSubmit={handleFormValidation}>
           <p hidden>
             <label>
               Don’t fill this out: <input name="bot-field" />

@@ -59,3 +59,17 @@
     }
   }
 }
+@media (max-width: 830px) {
+  .second_wrap {
+    .project_text {
+      span {
+        font-size: 26px;
+      }
+      p {
+        max-width: 350px;
+        font-size: 14px;
+        margin: auto;
+      }
+    }
+  }
+}
