@@ -16,10 +16,7 @@ export const ReadyToBook = () => {
               className={styles.img_link}
             >
               <abbr title="with telegram">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2Fnataliavatar.png?alt=media&token=4225e739-c2dd-4f52-83a5-8a9512424817"
-                  alt="int avat"
-                />
+                <img src="/avatar.png" alt="int avat" />
                 <Telegram />
                 <Share />
               </abbr>
