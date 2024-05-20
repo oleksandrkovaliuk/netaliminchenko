@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import { formSchema } from "../../validation/formValidation";
 import { navigate } from "gatsby";
 import { toast } from "sonner";
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 export const ContactOrBookTemplate = () => {
   const [validationError, setValidationError] = useState({
     email: false,
@@ -42,7 +47,10 @@ export const ContactOrBookTemplate = () => {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        body: encode({
+          "form-name": "contact_me",
+          ...formValues,
+        }),
       });
       // navigate("/");
       toast.message(`Thank you ${e.target[2].value} 🖤`, {
@@ -120,12 +128,12 @@ export const ContactOrBookTemplate = () => {
           <img src="/withCamera.png" alt="netali_photo" />
         </div>
         <form
-          name="contact_me"
-          data-netlify="true"
+          // name="contact_me"
+          // data-netlify="true"
           className={styles.form}
           onSubmit={handleFormValidation}
-          data-netlify-honeypot="bot-field"
-          method="POST"
+          // data-netlify-honeypot="bot-field"
+          // method="POST"
         >
           <input type="hidden" name="form-name" value="contact_me" />
           <p hidden>
