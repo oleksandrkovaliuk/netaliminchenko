@@ -13,6 +13,10 @@ export const ContactOrBookTemplate = () => {
   });
   const [isValid, setIsValid] = useState(false);
   const handleFormValidation = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
     const formatDate = (date: Date) => {
       return date
         .toLocaleString("en-US", {
@@ -24,20 +28,17 @@ export const ContactOrBookTemplate = () => {
         })
         .replace(",", "");
     };
-    e.preventDefault();
 
     try {
       const formValues = {
-        name: e.target[2].value,
-        email: e.target[3].value,
-        details: e.target[4].value,
+        name: formData.get("name"),
+        email: formData.get("email"),
+        details: formData.get("details"),
       };
+
       await formSchema.validate(formValues, {
         strict: true,
       });
-      const formData = new FormData(e?.target);
-      console.log(formData, "formdata");
-
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -126,7 +127,7 @@ export const ContactOrBookTemplate = () => {
           data-netlify-honeypot="bot-field"
           method="POST"
         >
-          <input type="hidden" name="contact_me" value="contact_me" />
+          <input type="hidden" name="form-name" value="contact_me" />
           <p hidden>
             <label>
               Don’t fill this out: <input name="bot-field" />
