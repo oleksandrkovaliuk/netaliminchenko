@@ -11,8 +11,8 @@ collections:
     folder: "content"
     create: true
     slug: "{{slug}}"
-    media_folder: "static/images/uploads"
-    public_folder: "/images/uploads"
+    media_folder: "static/images/"
+    public_folder: "/images/"
     path: "{{title}}-{{year}}-{{month}}-{{day}}-{{minute}}/index"
     editor:
       preview: true
