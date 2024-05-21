@@ -38,7 +38,11 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
     offset: ["100% 50%", "0% 50%"],
   });
 
-  const scaleX = useTransform(scrollYProgress, [0, 1], ["0.8", "1.2"]);
+  const scaleX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [window?.innerWidth < 768 ? "0.85" : "0.8", "1.2"]
+  );
   const borderRadius = useTransform(scrollYProgress, [0, 1], ["30px", "0px"]);
 
   return (
@@ -49,8 +53,8 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
         className={styles.video_block}
         transition={{ type: "spring", duration: 0.3, stiffness: 50 }}
       >
-        <motion.video style={{ borderRadius }} autoPlay loop controls>
-          <source src={frontmatter.preview_video}></source>
+        <motion.video style={{ borderRadius }} autoPlay loop muted>
+          <source src={frontmatter.preview_video} type="video/mp4"></source>
         </motion.video>
         <div className={styles.project_disc}>
           <span>{frontmatter.location}</span>
