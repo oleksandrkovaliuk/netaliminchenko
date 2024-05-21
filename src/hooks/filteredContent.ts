@@ -12,16 +12,12 @@ export const useFilteredData = ({ filterBy, sortByTime }: filterTypes) => {
     allMarkdownRemark: { nodes },
   } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        filter: { fields: { slug: { regex: "/project/" } } }
-        sort: { frontmatter: { id: ASC } }
-      ) {
+      allMarkdownRemark(filter: { fields: { slug: { regex: "/project/" } } }) {
         nodes {
           frontmatter {
             title
             category
             preview_img
-            id
             complete_date
           }
           fields {

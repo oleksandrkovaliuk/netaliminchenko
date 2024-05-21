@@ -4,13 +4,9 @@ export const useExtractAllProjects = () => {
     allMarkdownRemark: { nodes },
   } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        filter: { fields: { slug: { regex: "/project/" } } }
-        sort: { frontmatter: { id: ASC } }
-      ) {
+      allMarkdownRemark(filter: { fields: { slug: { regex: "/project/" } } }) {
         nodes {
           frontmatter {
-            id
             title
             location
             category
@@ -18,7 +14,6 @@ export const useExtractAllProjects = () => {
             full_description
             preview_img
             all_img {
-              imgId
               imgUrl
               postUrl
             }
@@ -28,7 +23,6 @@ export const useExtractAllProjects = () => {
               customerFeedBack
               customerName
             }
-            id
           }
           fields {
             slug

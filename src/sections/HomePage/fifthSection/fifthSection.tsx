@@ -33,7 +33,8 @@ export const FifthSection = () => {
           slidesToShow: 2.5,
           slidesToScroll: 1,
         },
-      }, {
+      },
+      {
         breakpoint: 800,
         settings: {
           slidesToShow: 1,
@@ -53,10 +54,7 @@ export const FifthSection = () => {
                 frontmatter: customerReviewTypes;
                 fields: { slug: string };
               }) => (
-                <div
-                  key={item.frontmatter.id}
-                  className={styles.kind_words_wrap}
-                >
+                <div key={item.fields.slug} className={styles.kind_words_wrap}>
                   <div className={styles.review_text}>
                     <p>"{item.frontmatter.customerReview.customerFeedBack}"</p>
                     <div className={styles.customer}>

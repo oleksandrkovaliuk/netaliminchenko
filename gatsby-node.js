@@ -43,7 +43,6 @@ exports.createPages = ({ graphql, actions }) => {
                     source
                   }
                   frontmatter {
-                    id
                     title
                     location
                     category
@@ -51,7 +50,6 @@ exports.createPages = ({ graphql, actions }) => {
                     full_description
                     complete_date
                     all_img {
-                      imgId
                       imgUrl
                       postUrl
                     }

@@ -18,7 +18,7 @@ export const ThirdSection = () => {
             i: number
           ) => (
             <ProjectCard
-              key={item.frontmatter.id}
+              key={item.fields.slug}
               index={i}
               slug={item.fields.slug}
               preview_img={item.frontmatter.preview_img}

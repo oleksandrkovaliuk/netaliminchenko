@@ -169,7 +169,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
       </div>
       <ul ref={projectsRef} className={styles.items_by_categorie}>
         {filteredData.map((item: projectDataType) => (
-          <li key={item.frontmatter.id} className={styles.preview_imgs}>
+          <li key={item.fields.slug} className={styles.preview_imgs}>
             <Link to={item.fields.slug}>
               <PreviewProjectImg
                 src={item.frontmatter.preview_img}

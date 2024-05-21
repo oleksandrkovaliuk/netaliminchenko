@@ -7,10 +7,10 @@ public_folder: /images/uploads
 
 collections:
   - name: "products"
-    label: "Post"
+    label: "projects"
     folder: "content"
     create: true
-    slug: "{{title}}-{{year}}-{{month}}-{{day}}-{{minute}}"
+    slug: "{{slug}}"
     media_folder: "static/images/uploads"
     public_folder: "/images/uploads"
     path: "{{title}}-{{year}}-{{month}}-{{day}}-{{minute}}/index"
@@ -20,30 +20,35 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Category", name: "category", widget: "string" }
-      - { label: "Complete Date", name: "complete_date", widget: "datetime", format: "YYYY-MM-DD" }
-      - {
-          label: "Short description",
-          name: "description",
-          widget: "string",
-        }
+      - { label: "Short description", name: "description", widget: "string" }
       - {
           label: "Full description",
           name: "full_description",
           widget: "string",
         }
+      - { label: "Preview img", name: "preview_img", widget: "image" }
+      - { label: "Preview video", name: "preview_video", widget: "file" }
+      - {
+          label: "Complete Date",
+          name: "complete_date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+        }
       - label: "All Imgs"
         name: "all_imgs"
         widget: "list"
         fields:
+          - { name: "imgUrl", label: "Img Url", widget: "image" }
+          - { name: "postUrl", label: "Post Url", widget: "string" }
+      - label: "Customer review"
+        name: "customerReview"
+        widget: "list"
+        fields:
+          - { name: "link", label: "Link on customer", widget: "string" }
+          - { name: "customerImg", label: "Customer img", widget: "image" }
           - {
-              name: "imgUrl",
-              label: "Img Url",
+              name: "customerFeedBack",
+              label: "Customer feedback",
               widget: "string",
-              default: "https://firebasestorage.googleapis.com/v0/b/theater-53375.appspot.com/o/eventsImgs%2Fnatali%2FScreenshot%20from%202024-05-07%2013-58-44.png?alt=media&token=4423fd48-dd3a-4a6c-9cd8-0482ef847a6f",
             }
-          - {
-              name: "postUrl",
-              label: "Post Url",
-              widget: "string",
-              default: "https://www.instagram.com/p/CkTlZBgp20i/?img_index=2",
-            }
+          - { name: "customerName", label: "Customer name", widget: "string" }

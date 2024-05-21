@@ -4,13 +4,9 @@ export const usePostSlugs = () => {
     allMarkdownRemark: { nodes },
   } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        filter: { fields: { slug: { regex: "/project/" } } }
-        sort: { frontmatter: { complete_date: DESC } }
-      ) {
+      allMarkdownRemark(filter: { fields: { slug: { regex: "/project/" } } }) {
         nodes {
           frontmatter {
-            id
             title
             location
             preview_img

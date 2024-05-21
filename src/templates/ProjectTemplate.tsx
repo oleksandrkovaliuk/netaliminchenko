@@ -85,7 +85,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
       <div className={styles.imgs_wrap}>
         <div className={styles.all_imgs}>
           {frontmatter.all_img.map((item) => (
-            <a key={item.imgId} href={item.postUrl}>
+            <a key={item.imgUrl} href={item.postUrl}>
               <abbr title="check instagram post">
                 <img src={item.imgUrl} alt="imgalbum" />
               </abbr>
@@ -133,7 +133,6 @@ export const pageQuery = graphql`
   query PageByPath($slug: String!) {
     page: markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
-        id
         title
         location
         category
@@ -142,7 +141,6 @@ export const pageQuery = graphql`
         preview_video
         complete_date(fromNow: true)
         all_img {
-          imgId
           imgUrl
           postUrl
         }
