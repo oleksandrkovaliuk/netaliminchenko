@@ -36,6 +36,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow: hidden;
   }
   .project_text {
     position: absolute;
@@ -68,6 +69,11 @@
         max-width: 350px;
         font-size: 14px;
         margin: auto;
+      }
+    }
+    .container{
+      .img{
+        background-attachment: scroll;
       }
     }
   }
