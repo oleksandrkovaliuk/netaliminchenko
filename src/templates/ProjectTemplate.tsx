@@ -38,11 +38,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
     offset: ["100% 50%", "0% 50%"],
   });
 
-  const scaleX = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [window && window.innerWidth < 768 ? "0.85" : "0.8", "1.2"]
-  );
+  const scaleX = useTransform(scrollYProgress, [0, 1], ["0.85", "1.2"]);
   const borderRadius = useTransform(scrollYProgress, [0, 1], ["30px", "0px"]);
 
   return (
