@@ -49,9 +49,9 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
         className={styles.video_block}
         transition={{ type: "spring", duration: 0.3, stiffness: 50 }}
       >
-        <motion.video style={{ borderRadius }} autoPlay loop muted>
+        <video autoPlay loop muted>
           <source src={frontmatter.preview_video} type="video/mp4"></source>
-        </motion.video>
+        </video>
         <div className={styles.project_disc}>
           <span>{frontmatter.location}</span>
           <span>{frontmatter.complete_date}</span>
