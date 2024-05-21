@@ -29,9 +29,6 @@ export const ThirdSection = () => {
             />
           )
         )}
-      <span className={styles.all_projects}>
-        <Link to="/allProjects">View more</Link>
-      </span>
     </div>
   );
 };

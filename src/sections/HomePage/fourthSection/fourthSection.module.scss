@@ -1,0 +1,27 @@
+.all_projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--color-white);
+  font-size: 20px;
+  font-family: var(--font-SfThin);
+  margin-bottom: 100px;
+
+  a {
+    color: var(--color-gray);
+    text-decoration: unset;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+
+    &:hover {
+      color: var(--color-white);
+      transform: scale(1.02);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .all_projects {
+    margin-right: 10px;
+  }
+}

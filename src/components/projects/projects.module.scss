@@ -27,7 +27,7 @@
           color: var(--color-white);
           font-size: 30px;
           font-family: var(--font-SfMedium);
-          text-transform: capitalize;
+
           opacity: 0.5;
           transition: all 0.2s ease-in;
         }
@@ -58,7 +58,6 @@
         gap: 5px;
         color: var(--color-white);
         font-family: var(--font-SfMedium);
-        text-transform: capitalize;
         font-size: 17px;
         transition: all 0.3s ease-in-out;
         .sort_svg {
@@ -103,7 +102,7 @@
             width: 100%;
             color: var(--color-white);
             font-family: var(--font-SfMedium);
-            text-transform: capitalize;
+
             font-size: 17px;
           }
           &:hover {
@@ -165,6 +164,7 @@
     .chose_categories {
       flex-direction: column !important;
       align-items: flex-start !important;
+      margin-left: 10px;
       .sort_wrap {
         .sort_button {
           margin-left: unset;

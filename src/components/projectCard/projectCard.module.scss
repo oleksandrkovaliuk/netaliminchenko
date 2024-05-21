@@ -47,6 +47,10 @@
       font-size: 15px;
       font-family: var(--font-SfMedium);
       text-decoration: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
       &:hover {
         background-color: transparent;
         color: var(--color-white);
@@ -75,6 +79,15 @@
         width: 20%;
 
         transition: all 0.4s ease-in-out;
+      }
+      span {
+        pointer-events: none;
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(2) {
+          display: block;
+        }
       }
     }
   }
@@ -178,6 +191,15 @@
         padding: 10px 20px;
         right: 5px;
         left: 5px;
+
+        span {
+          &:nth-child(1) {
+            display: block;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+        }
       }
     }
   }

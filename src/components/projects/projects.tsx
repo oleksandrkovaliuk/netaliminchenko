@@ -27,12 +27,12 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
   };
   const optionListStyle = optionList?.height + 7;
   const [activeCategories, setActiveCategories] = useState<string>(projects[0]);
-  const [sortBy, setSortBy] = useState("");
+  const [sortBy, setSortBy] = useState("all projects");
   const [sortMenuIsOpen, setSortMenuIsOpen] = useState(false);
   const filteredData = useFilteredData({
     filterBy: activeCategories,
     sortByTime: sortBy,
-  });
+  }).slice(0, 4);
 
   const handleFilteringThroughCategory = (category: string) => {
     setActiveCategories(category);
@@ -49,7 +49,10 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
     projectsRef.current && autoAnimate(projectsRef.current);
   }, [projectsRef]);
   return (
-    <div className={styles.projects_wrap}>
+    <div
+      className={styles.projects_wrap}
+      style={cuted ? { marginBottom: "0px" } : { marginBottom: "100px" }}
+    >
       <div
         className={styles.chose_categories}
         style={
@@ -63,7 +66,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
                 maxWidth: "unset",
               }
             : {
-                marginLeft: "auto",
+                // marginLeft: "auto",
                 paddingInline: "150px",
               }
         }
@@ -85,7 +88,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
               onClick={() => setSortMenuIsOpen(!sortMenuIsOpen)}
               className={styles.sort_button}
             >
-              {!sortBy ? "Sort by" : sortBy}{" "}
+              {sortBy}
               <span
                 className={styles.sort_svg}
                 data-menuisopen={sortMenuIsOpen}

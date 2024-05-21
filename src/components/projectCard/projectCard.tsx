@@ -37,7 +37,7 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
 
         <Link to={slug}>
           <button className={styles.explore_btn}>
-            Explore {window?.innerWidth < 480 ? title : "more"}
+            Explore <span>{title}</span> <span>more</span>
           </button>
         </Link>
       </div>
