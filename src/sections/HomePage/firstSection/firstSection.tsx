@@ -24,7 +24,7 @@ export const FirstSection = () => {
             </Link>
           </abbr>
         </div>
-        <Link to="/about" className={styles.about_me}>
+        <Link to="/aboutMePage" className={styles.about_me}>
           More about me
         </Link>
       </div>
