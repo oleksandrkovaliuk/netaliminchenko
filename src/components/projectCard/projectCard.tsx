@@ -36,7 +36,9 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
         <img src={preview_img} alt="projectImgs" />
 
         <Link to={slug}>
-          <button className={styles.explore_btn}>Explore more</button>
+          <button className={styles.explore_btn}>
+            Explore {window?.innerWidth < 480 ? title : "more"}
+          </button>
         </Link>
       </div>
 
