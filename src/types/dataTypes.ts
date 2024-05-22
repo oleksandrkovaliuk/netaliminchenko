@@ -1,9 +1,15 @@
+import { IGatsbyImageData } from "gatsby-plugin-image";
+
 export type customerReviewTypes = {
   id: number;
   category: string;
   customerReview: {
     link: string;
-    customerImg: string;
+    customerImg: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+    };
     customerFeedBack: string;
     customerName: string;
   };
@@ -19,19 +25,30 @@ export type ProjectsType = {
   category: string;
   description: string;
   full_description: string;
-  preview_img: string;
+  preview_img: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
+    };
+  };
   preview_video: string;
   complete_date: string;
   all_imgs: [
     {
-      imgId: number;
-      imgUrl: string;
+      imgUrl: {
+        childImageSharp: {
+          gatsbyImageData: IGatsbyImageData;
+        };
+      };
       postUrl: string;
     }
   ];
   customerReview: {
     link: string;
-    customerImg: string;
+    customerImg: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+    };
     customerFeedBack: string;
     customerName: string;
   };

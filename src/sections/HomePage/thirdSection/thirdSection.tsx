@@ -1,7 +1,6 @@
 import React from "react";
 import * as styles from "./thirdSection.module.scss";
 import { ProjectCard } from "../../../components/projectCard";
-import { Link } from "gatsby";
 import { usePostSlugs } from "../../../hooks/postSlugs";
 import { ProjectsType } from "../../../types/dataTypes";
 
@@ -21,7 +20,9 @@ export const ThirdSection = () => {
               key={item.fields.slug}
               index={i}
               slug={item.fields.slug}
-              preview_img={item.frontmatter.preview_img}
+              preview_img={
+                item.frontmatter.preview_img.childImageSharp.gatsbyImageData
+              }
               location={item.frontmatter.location}
               title={item.frontmatter.title}
               description={item.frontmatter.description}

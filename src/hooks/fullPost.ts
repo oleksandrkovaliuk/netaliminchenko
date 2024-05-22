@@ -12,14 +12,26 @@ export const useExtractAllProjects = () => {
             category
             description
             full_description
-            preview_img
+            preview_img {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
             all_imgs {
-              imgUrl
+              imgUrl {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED)
+                }
+              }
               postUrl
             }
             customerReview {
               link
-              customerImg
+              customerImg {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED)
+                }
+              }
               customerFeedBack
               customerName
             }

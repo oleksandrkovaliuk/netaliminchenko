@@ -26,7 +26,12 @@ collections:
           name: "full_description",
           widget: "string",
         }
-      - { label: "Preview img", name: "preview_img", widget: "image" }
+      - {
+          label: "Preview img",
+          name: "preview_img",
+          widget: "image",
+          public_folder: "/content/projects/{{slug}}/images",
+        }
       - { label: "Preview video", name: "preview_video", widget: "file" }
       - {
           label: "Complete Date",
@@ -38,14 +43,24 @@ collections:
         name: "all_imgs"
         widget: "list"
         fields:
-          - { name: "imgUrl", label: "Img Url", widget: "image" }
+          - {
+              name: "imgUrl",
+              label: "Img Url",
+              widget: "image",
+              public_folder: "/content/projects/{{slug}}/images",
+            }
           - { name: "postUrl", label: "Post Url", widget: "string" }
       - label: "Customer review"
         name: "customerReview"
-        widget: "list"
+        widget: "object"
         fields:
           - { name: "link", label: "Link on customer", widget: "string" }
-          - { name: "customerImg", label: "Customer img", widget: "image" }
+          - {
+              name: "customerImg",
+              label: "Customer img",
+              widget: "image",
+              public_folder: "/content/projects/{{slug}}/images",
+            }
           - {
               name: "customerFeedBack",
               label: "Customer feedback",

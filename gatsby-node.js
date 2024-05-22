@@ -50,12 +50,20 @@ exports.createPages = ({ graphql, actions }) => {
                     full_description
                     complete_date
                     all_imgs {
-                      imgUrl
+                      imgUrl {
+                        childImageSharp {
+                          gatsbyImageData(layout: CONSTRAINED)
+                        }
+                      }
                       postUrl
                     }
                     customerReview {
                       link
-                      customerImg
+                      customerImg {
+                        childImageSharp {
+                          gatsbyImageData(layout: CONSTRAINED)
+                        }
+                      }
                       customerFeedBack
                       customerName
                     }

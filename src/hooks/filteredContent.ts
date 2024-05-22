@@ -17,7 +17,11 @@ export const useFilteredData = ({ filterBy, sortByTime }: filterTypes) => {
           frontmatter {
             title
             category
-            preview_img
+            preview_img {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
             complete_date
           }
           fields {

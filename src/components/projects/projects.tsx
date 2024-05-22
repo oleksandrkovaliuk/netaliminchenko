@@ -3,7 +3,6 @@ import * as styles from "./projects.module.scss";
 import { ProjectsType } from "../../types/dataTypes";
 import autoAnimate from "@formkit/auto-animate";
 import { PreviewProjectImg } from "../previewProjectsImg";
-import { usePostSlugs } from "../../hooks/postSlugs";
 import { Link } from "gatsby";
 import { useFilteredData } from "../../hooks/filteredContent";
 import { RightTo } from "../../icons/rightTo";

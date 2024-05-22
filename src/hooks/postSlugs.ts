@@ -9,7 +9,11 @@ export const usePostSlugs = () => {
           frontmatter {
             title
             location
-            preview_img
+            preview_img {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
             description
             category
             complete_date

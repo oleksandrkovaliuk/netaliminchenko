@@ -20,6 +20,7 @@ const config: GatsbyConfig = {
         staticFolder: "static",
       },
     },
+
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
