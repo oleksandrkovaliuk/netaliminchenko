@@ -2,8 +2,8 @@ backend:
   name: git-gateway #test-repo
   branch: main
 
-media_folder: static/images/uploads
-public_folder: /images/uploads
+media_folder: static/images/
+public_folder: /images/
 
 collections:
   - name: "products"
@@ -11,7 +11,7 @@ collections:
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
-    media_folder: "static/images/"
+    media_folder: "content/projects/static/images/"
     public_folder: "/images/"
     path: "{{title}}-{{year}}-{{month}}-{{day}}-{{minute}}/index"
     editor:
