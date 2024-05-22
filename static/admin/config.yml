@@ -11,9 +11,9 @@ collections:
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
-    media_folder: "content/projects/images"
-    public_folder: "/content/projects/images"
-    path: "{{title}}"
+    media_folder: "{{slug}}/images"
+    public_folder: "/content/projects/{{slug}}/images"
+    path: "{{slug}}/"
     editor:
       preview: true
     fields:
