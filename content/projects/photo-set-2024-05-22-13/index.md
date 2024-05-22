@@ -7,4 +7,7 @@ full_description: fffdsfdsffffdsfdsffffdsfdsffffdsfdsffffdsfdsffffdsfdsffffdsfds
 preview_img: /images/screenshot-from-2024-05-14-20-00-33.png
 preview_video: /images/netlify-cms-gatsby-tutorial-6_-setting-up-the-admin-file.mp4
 complete_date: 2024-05-21
+all_imgs:
+  - imgUrl: /images/screenshot-from-2024-05-14-20-00-33.png
+    postUrl: sdfsdfdsfdsfdsfsdfsdfsd
 ---
