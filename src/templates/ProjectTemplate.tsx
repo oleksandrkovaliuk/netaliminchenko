@@ -82,7 +82,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
           {frontmatter.full_description}
         </motion.p>
       </motion.div>
-      {/* <div className={styles.imgs_wrap}>
+      <div className={styles.imgs_wrap}>
         <div className={styles.all_imgs}>
           {frontmatter.all_img.map((item) => (
             <a key={item.imgUrl} href={item.postUrl}>
@@ -96,7 +96,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
           <span>Category</span>
           <span>{frontmatter.category}</span>
         </div>
-      </div> */}
+      </div>
       <motion.div ref={reviewBlockRef} className={styles.customer_review}>
         <div className={styles.customer_img}>
           <img
