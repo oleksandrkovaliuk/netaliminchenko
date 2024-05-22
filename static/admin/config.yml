@@ -8,7 +8,7 @@ public_folder: /images/uploads
 collections:
   - name: "products"
     label: "projects"
-    folder: "content"
+    folder: "content/projects"
     create: true
     slug: "{{slug}}"
     media_folder: "static/images/"
