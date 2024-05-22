@@ -84,7 +84,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
       </motion.div>
       <div className={styles.imgs_wrap}>
         <div className={styles.all_imgs}>
-          {frontmatter.all_img.map((item) => (
+          {frontmatter.all_imgs.map((item) => (
             <a key={item.imgUrl} href={item.postUrl}>
               <abbr title="check instagram post">
                 <img src={item.imgUrl} alt="imgalbum" />
@@ -140,7 +140,7 @@ export const pageQuery = graphql`
         full_description
         preview_video
         complete_date(fromNow: true)
-        all_img {
+        all_imgs {
           imgUrl
           postUrl
         }

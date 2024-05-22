@@ -22,7 +22,7 @@ export type ProjectsType = {
   preview_img: string;
   preview_video: string;
   complete_date: string;
-  all_img: [
+  all_imgs: [
     {
       imgId: number;
       imgUrl: string;

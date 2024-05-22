@@ -49,7 +49,7 @@ exports.createPages = ({ graphql, actions }) => {
                     description
                     full_description
                     complete_date
-                    all_img {
+                    all_imgs {
                       imgUrl
                       postUrl
                     }

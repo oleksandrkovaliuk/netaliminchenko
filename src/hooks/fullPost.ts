@@ -13,7 +13,7 @@ export const useExtractAllProjects = () => {
             description
             full_description
             preview_img
-            all_img {
+            all_imgs {
               imgUrl
               postUrl
             }
