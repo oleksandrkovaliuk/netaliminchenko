@@ -52,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
                     all_imgs {
                       imgUrl {
                         childImageSharp {
-                          gatsbyImageData(layout: CONSTRAINED)
+                          gatsbyImageData
                         }
                       }
                       postUrl
@@ -61,7 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
                       link
                       customerImg {
                         childImageSharp {
-                          gatsbyImageData(layout: CONSTRAINED)
+                          gatsbyImageData
                         }
                       }
                       customerFeedBack

@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
 import * as styles from "./previewProjectImg.module.scss";
 import { motion, useInView } from "framer-motion";
-import Img from "gatsby-image";
-import { ImageSharpFluid } from "../../types/dataTypes";
+import { GatsbyImage, IGatsbyImageData, getImage } from "gatsby-plugin-image";
 type ImgType = {
-  src: ImageSharpFluid;
+  src: IGatsbyImageData;
   title: string;
   slug: string;
 };
@@ -30,9 +29,8 @@ export const PreviewProjectImg: React.FC<ImgType> = ({ src, title, slug }) => {
       className={styles.img_wrap}
     >
       <abbr title="check full project">
-        <Img
-          ref={imgRef}
-          fluid={src}
+        <GatsbyImage
+          image={getImage(src)}
           alt="preview_img"
           className={styles.img}
         />

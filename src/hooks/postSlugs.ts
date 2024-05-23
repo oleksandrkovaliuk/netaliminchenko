@@ -11,7 +11,7 @@ export const usePostSlugs = () => {
             location
             preview_img {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData
               }
             }
             description

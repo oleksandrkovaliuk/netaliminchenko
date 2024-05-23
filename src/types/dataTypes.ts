@@ -1,20 +1,10 @@
-
-export type ImageSharpFluid = {
-  aspectRatio: number;
-  src: string;
-  srcSet: string;
-  sizes: string;
-};
+import { IGatsbyImageData } from "gatsby-plugin-image";
 export type customerReviewTypes = {
   id: number;
   category: string;
   customerReview: {
     link: string;
-    customerImg: {
-      childImageSharp: {
-        fluid: ImageSharpFluid;
-      };
-    };
+    customerImg: IGatsbyImageData;
     customerFeedBack: string;
     customerName: string;
   };
@@ -30,32 +20,20 @@ export type ProjectsType = {
   category: string;
   description: string;
   full_description: string;
-  preview_img: {
-    childImageSharp: {
-      fluid: ImageSharpFluid;
-    };
-  };
+  preview_img: IGatsbyImageData;
   preview_video: {
     publicURL: string;
   };
   complete_date: string;
   all_imgs: [
     {
-      imgUrl: {
-        childImageSharp: {
-          fluid: ImageSharpFluid;
-        };
-      };
+      imgUrl: IGatsbyImageData;
       postUrl: string;
     }
   ];
   customerReview: {
     link: string;
-    customerImg: {
-      childImageSharp: {
-        fluid: ImageSharpFluid;
-      };
-    };
+    customerImg: IGatsbyImageData;
     customerFeedBack: string;
     customerName: string;
   };

@@ -7,7 +7,6 @@ import { Instagram } from "../icons/instagram";
 import { Share } from "../icons/share";
 import { ProjectsType } from "../types/dataTypes";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
-import Img from "gatsby-image";
 type PostTemplateProps = {
   data: {
     page: { frontmatter: ProjectsType };
@@ -92,10 +91,7 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
           {frontmatter.all_imgs.map((item, i: number) => (
             <a key={item.postUrl} href={item.postUrl}>
               <abbr title="check instagram post">
-                <Img
-                  fluid={item.imgUrl.childImageSharp.fluid}
-                  alt={`img + ${i}`}
-                />
+                <GatsbyImage image={getImage(item.imgUrl)} alt={`img + ${i}`} />
               </abbr>
             </a>
           ))}
@@ -107,14 +103,9 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
       </div>
       <motion.div ref={reviewBlockRef} className={styles.customer_review}>
         <div className={styles.customer_img}>
-          <Img
-            fluid={frontmatter.customerReview.customerImg.childImageSharp.fluid}
-            style={
-              feedbackBlockInView
-                ? { opacity: "1", transform: "translateY(0)" }
-                : { opacity: "0", transform: "translateY(20px)" }
-            }
-            alt="customer_pic"
+          <GatsbyImage
+            image={getImage(frontmatter.customerReview.customerImg)}
+            alt="customer_img"
           />
         </div>
         <div className={styles.review}>
@@ -152,18 +143,18 @@ export const pageQuery = graphql`
         complete_date(fromNow: true)
         all_imgs {
           imgUrl {
-            childImageSharp: {
-              fluid: ImageSharpFluid;
-            };
+            childImageSharp {
+              gatsbyImageData
+            }
           }
           postUrl
         }
         customerReview {
           link
           customerImg {
-            childImageSharp: {
-              fluid: ImageSharpFluid;
-            };
+            childImageSharp {
+              gatsbyImageData
+            }
           }
           customerFeedBack
           customerName

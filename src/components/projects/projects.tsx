@@ -171,7 +171,7 @@ export const ProjectsComponent: React.FC<ProjectsProps> = ({ cuted }) => {
           <li key={item.fields.slug} className={styles.preview_imgs}>
             <Link to={item.fields.slug}>
               <PreviewProjectImg
-                src={item.frontmatter.preview_img.childImageSharp.fluid}
+                src={item.frontmatter.preview_img}
                 title={item.frontmatter.title}
                 slug={item.fields.slug}
               />

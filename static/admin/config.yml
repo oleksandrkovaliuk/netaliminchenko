@@ -12,8 +12,7 @@ collections:
     create: true
     slug: "{{slug}}"
     path: "{{slug}}/index"
-    media_folder: /images
-    public_folder: ./images
+    public_folder: ../images
     editor:
       preview: true
     fields:
@@ -30,13 +29,13 @@ collections:
           label: "Preview img",
           name: "preview_img",
           widget: "image",
-          public_folder: "./images",
+          public_folder: "../../images",
         }
       - {
           label: "Preview video",
           name: "preview_video",
           widget: "file",
-          public_folder: "./images",
+          public_folder: "../../images",
         }
       - {
           label: "Complete Date",
@@ -52,7 +51,7 @@ collections:
               name: "imgUrl",
               label: "Img Url",
               widget: "image",
-              public_folder: "./images",
+              public_folder: "../../images",
             }
           - { name: "postUrl", label: "Post Url", widget: "string" }
       - label: "Customer review"
@@ -64,7 +63,7 @@ collections:
               name: "customerImg",
               label: "Customer img",
               widget: "image",
-              public_folder: "./images",
+              public_folder: "../../images",
             }
           - {
               name: "customerFeedBack",

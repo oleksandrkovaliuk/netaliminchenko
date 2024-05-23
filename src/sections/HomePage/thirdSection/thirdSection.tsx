@@ -20,7 +20,7 @@ export const ThirdSection = () => {
               key={item.fields.slug}
               index={i}
               slug={item.fields.slug}
-              preview_img={item.frontmatter.preview_img.childImageSharp.fluid}
+              preview_img={item.frontmatter.preview_img}
               location={item.frontmatter.location}
               title={item.frontmatter.title}
               description={item.frontmatter.description}

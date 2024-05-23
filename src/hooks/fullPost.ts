@@ -14,13 +14,13 @@ export const useExtractAllProjects = () => {
             full_description
             preview_img {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData
               }
             }
             all_imgs {
               imgUrl {
                 childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED)
+                  gatsbyImageData
                 }
               }
               postUrl
@@ -29,11 +29,14 @@ export const useExtractAllProjects = () => {
               link
               customerImg {
                 childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED)
+                  gatsbyImageData
                 }
               }
               customerFeedBack
               customerName
+            }
+            preview_video {
+              publicURL
             }
           }
           fields {

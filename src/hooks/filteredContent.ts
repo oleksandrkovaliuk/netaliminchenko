@@ -19,7 +19,7 @@ export const useFilteredData = ({ filterBy, sortByTime }: filterTypes) => {
             category
             preview_img {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData
               }
             }
             complete_date
