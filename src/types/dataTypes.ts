@@ -30,7 +30,9 @@ export type ProjectsType = {
       gatsbyImageData: IGatsbyImageData;
     };
   };
-  preview_video: string;
+  preview_video: {
+    publicURL: string;
+  };
   complete_date: string;
   all_imgs: [
     {

@@ -58,7 +58,10 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
           playsInline
           preload="auto"
         >
-          <source src={frontmatter.preview_video} type="video/mp4"></source>
+          <source
+            src={frontmatter.preview_video.publicURL}
+            type="video/mp4"
+          ></source>
         </motion.video>
         <div className={styles.project_disc}>
           <span>{frontmatter.location}</span>
@@ -145,7 +148,9 @@ export const pageQuery = graphql`
         category
         description
         full_description
-        preview_video
+        preview_video {
+          publicURL
+        }
         complete_date(fromNow: true)
         all_imgs {
           imgUrl {
