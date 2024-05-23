@@ -3,9 +3,10 @@ import * as styles from "./projectCard.module.scss";
 import { Link } from "gatsby";
 import { motion, useInView } from "framer-motion";
 import { Location } from "../../icons/location";
-import { GatsbyImage, IGatsbyImageData, getImage } from "gatsby-plugin-image";
+import Img from "gatsby-image";
+import { ImageSharpFluid } from "../../types/dataTypes";
 type ProjectCardType = {
-  preview_img: IGatsbyImageData;
+  preview_img: ImageSharpFluid;
   slug: string;
   title: string;
   description: string;
@@ -34,7 +35,7 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
         style={cardInView ? { scale: "1" } : { scale: "0.9" }}
         className={styles.img_block}
       >
-        <GatsbyImage image={preview_img} alt="projectImgs" />
+        <Img fluid={preview_img} alt="projectImgs" />
 
         <Link to={slug}>
           <button className={styles.explore_btn}>

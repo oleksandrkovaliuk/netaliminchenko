@@ -6,7 +6,8 @@ import * as styles from "./ProjectTemplate.module.scss";
 import { Instagram } from "../icons/instagram";
 import { Share } from "../icons/share";
 import { ProjectsType } from "../types/dataTypes";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
+import Img from "gatsby-image";
 type PostTemplateProps = {
   data: {
     page: { frontmatter: ProjectsType };
@@ -88,16 +89,16 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
       </motion.div>
       <div className={styles.imgs_wrap}>
         <div className={styles.all_imgs}>
-          {frontmatter.all_imgs.map((item, i: number) => {
-            const img = item.imgUrl.childImageSharp.gatsbyImageData;
-            return (
-              <a key={item.postUrl} href={item.postUrl}>
-                <abbr title="check instagram post">
-                  <GatsbyImage image={img} alt={`img + ${i}`} />
-                </abbr>
-              </a>
-            );
-          })}
+          {frontmatter.all_imgs.map((item, i: number) => (
+            <a key={item.postUrl} href={item.postUrl}>
+              <abbr title="check instagram post">
+                <Img
+                  fluid={item.imgUrl.childImageSharp.fluid}
+                  alt={`img + ${i}`}
+                />
+              </abbr>
+            </a>
+          ))}
         </div>
         <div className={styles.category}>
           <span>Category</span>
@@ -106,15 +107,12 @@ const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
       </div>
       <motion.div ref={reviewBlockRef} className={styles.customer_review}>
         <div className={styles.customer_img}>
-          <GatsbyImage
+          <Img
+            fluid={frontmatter.customerReview.customerImg.childImageSharp.fluid}
             style={
               feedbackBlockInView
                 ? { opacity: "1", transform: "translateY(0)" }
                 : { opacity: "0", transform: "translateY(20px)" }
-            }
-            image={
-              frontmatter.customerReview.customerImg.childImageSharp
-                .gatsbyImageData
             }
             alt="customer_pic"
           />
@@ -154,18 +152,18 @@ export const pageQuery = graphql`
         complete_date(fromNow: true)
         all_imgs {
           imgUrl {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
-            }
+            childImageSharp: {
+              fluid: ImageSharpFluid;
+            };
           }
           postUrl
         }
         customerReview {
           link
           customerImg {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
-            }
+            childImageSharp: {
+              fluid: ImageSharpFluid;
+            };
           }
           customerFeedBack
           customerName

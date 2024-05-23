@@ -13,6 +13,7 @@ const config: GatsbyConfig = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-netlify-cms",
     "gatsby-transformer-remark",
+    "gatsby-image",
     {
       resolve: "gatsby-plugin-image",
       options: {

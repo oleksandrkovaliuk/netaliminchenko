@@ -1,8 +1,10 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import * as styles from "./previewProjectImg.module.scss";
 import { motion, useInView } from "framer-motion";
+import Img from "gatsby-image";
+import { ImageSharpFluid } from "../../types/dataTypes";
 type ImgType = {
-  src: string;
+  src: ImageSharpFluid;
   title: string;
   slug: string;
 };
@@ -28,7 +30,12 @@ export const PreviewProjectImg: React.FC<ImgType> = ({ src, title, slug }) => {
       className={styles.img_wrap}
     >
       <abbr title="check full project">
-        <img ref={imgRef} src={src} alt="preview_img" className={styles.img} />
+        <Img
+          ref={imgRef}
+          fluid={src}
+          alt="preview_img"
+          className={styles.img}
+        />
         <div className={styles.bottom_disc}>
           <span>{title}</span>
         </div>
