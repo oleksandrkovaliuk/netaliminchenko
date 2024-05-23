@@ -12,7 +12,7 @@ collections:
     create: true
     slug: "{{slug}}"
     media_folder: "{{slug}}/images"
-    public_folder: "{{slug}}/images"
+    public_folder: "/images"
     path: "{{slug}}/index"
     editor:
       preview: true
