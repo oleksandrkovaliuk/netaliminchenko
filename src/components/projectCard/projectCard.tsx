@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { motion, useInView } from "framer-motion";
 import { Location } from "../../icons/location";
 import { GatsbyImage, IGatsbyImageData, getImage } from "gatsby-plugin-image";
-import { FormatTime } from "../../services/formatTime";
+import { formatTime } from "../../services/formatTime";
 type ProjectCardType = {
   preview_img: IGatsbyImageData;
   slug: string;
@@ -81,7 +81,7 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
             <Location />
             {location}
           </span>
-          <span>{FormatTime(completedDate)}</span>
+          <span>{formatTime(completedDate)}</span>
         </div>
       </motion.div>
     </div>
