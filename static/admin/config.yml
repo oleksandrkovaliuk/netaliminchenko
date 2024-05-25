@@ -12,7 +12,6 @@ collections:
     create: true
     slug: "{{slug}}"
     path: "{{slug}}/index"
-    public_folder: ./
     editor:
       preview: true
     fields:
@@ -25,8 +24,18 @@ collections:
           name: "full_description",
           widget: "string",
         }
-      - { label: "Preview img", name: "preview_img", widget: "image" }
-      - { label: "Preview video", name: "preview_video", widget: "file" }
+      - {
+          label: "Preview img",
+          name: "preview_img",
+          widget: "image",
+          public_folder: ./,
+        }
+      - {
+          label: "Preview video",
+          name: "preview_video",
+          widget: "file",
+          public_folder: ./,
+        }
       - {
           label: "Complete Date",
           name: "complete_date",
@@ -37,14 +46,24 @@ collections:
         name: "all_imgs"
         widget: "list"
         fields:
-          - { name: "imgUrl", label: "Img Url", widget: "image" }
+          - {
+              name: "imgUrl",
+              label: "Img Url",
+              widget: "image",
+              public_folder: ./,
+            }
           - { name: "postUrl", label: "Post Url", widget: "string" }
       - label: "Customer review"
         name: "customerReview"
         widget: "object"
         fields:
           - { name: "link", label: "Link on customer", widget: "string" }
-          - { name: "customerImg", label: "Customer img", widget: "image" }
+          - {
+              name: "customerImg",
+              label: "Customer img",
+              widget: "image",
+              public_folder: ./,
+            }
           - {
               name: "customerFeedBack",
               label: "Customer feedback",

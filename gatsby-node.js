@@ -100,22 +100,21 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // and pages.
-        const pages = items.filter(
-          (item) => item.node.fields.source === "pages"
-        );
-        pages.forEach(({ node }) => {
-          const slug = node.fields.slug;
-          const source = node.fields.source;
-
-          createPage({
-            path: slug,
-            component: pageTemplate,
-            context: {
-              slug,
-              source,
-            },
-          });
-        });
+        // const pages = items.filter(
+        //   (item) => item.node.fields.source === "pages"
+        // );
+        // pages.forEach(({ node }) => {
+        //   const slug = node.fields.slug;
+        //   const source = node.fields.source;
+        //   console.log(slug, "check pages slugs");
+        //   createPage({
+        //     path: slug,
+        //     context: {
+        //       slug,
+        //       source,
+        //     },
+        //   });
+        // });
       })
     );
   });

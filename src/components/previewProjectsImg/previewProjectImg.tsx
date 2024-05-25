@@ -28,7 +28,7 @@ export const PreviewProjectImg: React.FC<ImgType> = ({ src, title, slug }) => {
       }
       className={styles.img_wrap}
     >
-      <abbr title="check full project">
+      <abbr ref={imgRef} title="check full project">
         <GatsbyImage
           image={getImage(src)}
           alt="preview_img"

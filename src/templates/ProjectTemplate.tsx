@@ -5,14 +5,9 @@ import { useInView, motion, useScroll, useTransform } from "framer-motion";
 import * as styles from "./ProjectTemplate.module.scss";
 import { Instagram } from "../icons/instagram";
 import { Share } from "../icons/share";
-import { ProjectsType } from "../types/dataTypes";
+import { PageData, ProjectsType } from "../types/dataTypes";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
-type PostTemplateProps = {
-  data: {
-    page: { frontmatter: ProjectsType };
-  };
-};
-const ProjectTemplate: React.FC<PostTemplateProps> = ({ data }) => {
+const ProjectTemplate: React.FC<PageData> = ({ data }) => {
   const { frontmatter } = data.page;
   const videoRef = useRef(null);
   const h1Ref = useRef(null);

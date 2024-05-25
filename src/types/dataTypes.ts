@@ -39,3 +39,8 @@ export type ProjectsType = {
   };
   slug: string;
 };
+export type PageData = {
+  data: {
+    page: { frontmatter: ProjectsType };
+  };
+};

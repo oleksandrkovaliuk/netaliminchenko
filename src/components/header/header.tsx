@@ -64,7 +64,7 @@ export const Header = () => {
           </abbr>
           <ul className={style.nav}>
             <li>
-              <Link to="/aboutMePage">About Me</Link>
+              <Link to="/about">About Me</Link>
             </li>
             <li>
               <Link to="/allProjects">Projects</Link>
@@ -106,7 +106,7 @@ export const Header = () => {
           transition={{ duration: 0.5 }}
         >
           <li>
-            <Link to="/aboutMePage" onClick={() => setMobileMenuIsOpen(false)}>
+            <Link to="/about" onClick={() => setMobileMenuIsOpen(false)}>
               About Me
             </Link>
           </li>

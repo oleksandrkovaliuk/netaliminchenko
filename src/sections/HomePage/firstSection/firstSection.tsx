@@ -8,7 +8,7 @@ export const FirstSection = () => {
       <div className={styles.about}>
         <div className={styles.about_content}>
           <div className={styles.img}>
-            <Link to="/aboutMePage">
+            <Link to="/about">
               <img src="/main_photo.png" alt="avat" />
             </Link>
           </div>
@@ -24,7 +24,7 @@ export const FirstSection = () => {
             </Link>
           </abbr>
         </div>
-        <Link to="/aboutMePage" className={styles.about_me}>
+        <Link to="/about" className={styles.about_me}>
           More about me
         </Link>
       </div>
