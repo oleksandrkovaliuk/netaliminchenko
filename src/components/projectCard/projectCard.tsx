@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { motion, useInView } from "framer-motion";
 import { Location } from "../../icons/location";
 import { GatsbyImage, IGatsbyImageData, getImage } from "gatsby-plugin-image";
+import { FormatTime } from "../../services/formatTime";
 type ProjectCardType = {
   preview_img: IGatsbyImageData;
   slug: string;
@@ -51,25 +52,25 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
                   ? window?.innerWidth < 768
                     ? window?.innerWidth < 630
                       ? "150%"
-                      : "75%"
-                    : " 120%"
-                  : "12%",
+                      : "120%"
+                    : " 160%"
+                  : "19%",
               }
             : {
                 x: cardInView
                   ? window?.innerWidth < 768
                     ? window?.innerWidth < 630
                       ? "-150%"
-                      : "-75%"
-                    : "-120%"
-                  : "-10%",
+                      : "-120%"
+                    : "-160%"
+                  : "-16%",
               }
         }
         transition={{ type: "spring", duration: 0.3, stiffness: 50 }}
         className={styles.right_disc}
         style={
           cardInView
-            ? { maxWidth: "350px", transition: "max-width 0s ease-in-out" }
+            ? { maxWidth: "300px", transition: "max-width 0s ease-in-out" }
             : { maxWidth: "200px", transition: "max-width 0.8s ease-in-out" }
         }
       >
@@ -80,7 +81,7 @@ export const ProjectCard: React.FC<ProjectCardType> = ({
             <Location />
             {location}
           </span>
-          <span>{completedDate}</span>
+          <span>{FormatTime(completedDate)}</span>
         </div>
       </motion.div>
     </div>

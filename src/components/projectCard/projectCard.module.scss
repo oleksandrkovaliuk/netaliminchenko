@@ -8,6 +8,12 @@
   overflow: hidden;
   &:nth-child(even) {
     flex-direction: row-reverse;
+    .right_disc {
+      text-align: left;
+      .location_time {
+        justify-content: flex-start;
+      }
+    }
     .img_block {
       img {
         margin-left: auto;
@@ -98,6 +104,7 @@
     position: absolute;
     max-width: 400px;
     z-index: -1;
+    text-align: right;
     h1,
     p {
       color: var(--color-white);
@@ -113,6 +120,7 @@
       display: flex;
       gap: 20px;
       align-items: center;
+      justify-content: flex-end;
       span {
         font-size: 13px;
         font-family: var(--font-SfMedium);
@@ -145,8 +153,8 @@
     }
     .img_block {
       img {
-        max-width: 250px;
-        border-radius: 5px;
+        max-width: 300px;
+        border-radius: 10px;
       }
       .explore_btn {
         padding: 5px 10px;
@@ -157,19 +165,6 @@
   }
 }
 @media (max-width: 625px) {
-  .project_card {
-    .right_disc {
-      h1 {
-        font-size: 15px;
-      }
-      p {
-        display: none;
-      }
-    }
-  }
-}
-
-@media (max-width: 481px) {
   .project_card {
     &:not(:last-child) {
       margin-bottom: 70px;

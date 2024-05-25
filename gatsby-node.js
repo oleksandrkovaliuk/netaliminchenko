@@ -2,8 +2,6 @@ const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
 const projectTemplate = path.resolve("./src/templates/ProjectTemplate.tsx");
-const pageTemplate = path.resolve("./src/templates/PageTemplate.tsx");
-
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {

@@ -41,7 +41,9 @@
     z-index: 6;
     span {
       font-size: 17px;
+      font-family: var(--font-SfMedium);
       color: white;
+      font-weight: unset;
     }
   }
 }
